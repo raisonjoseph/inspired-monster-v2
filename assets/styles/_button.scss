@@ -1,0 +1,42 @@
+.btn {
+  padding: 1.5rem 1rem;
+  color: white;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 120%;
+  background: $btn-base;
+}
+
+.btn:hover {
+  background: $btn-hover;
+}
+.btn:active {
+  background: $btn-active;
+}
+.btn:disabled {
+  background: $btn-disabled;
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .btn {
+    padding: 1.25rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { ... }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { ... }
+
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) { ... }
