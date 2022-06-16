@@ -6,26 +6,36 @@
   font-weight: 700;
   line-height: 120%;
   background: $btn-base;
-}
+  outline: none;
+  border: none;
+  min-width: 370px;
+  cursor: pointer;
+  &.btn-full-width {
+    width: 100%;
+  }
 
-.btn:hover {
-  background: $btn-hover;
-}
-.btn:active {
-  background: $btn-active;
-}
-.btn:disabled {
-  background: $btn-disabled;
+  &:hover {
+    background: $btn-hover;
+  }
+  &:active {
+    background: $btn-active;
+  }
+  &:disabled {
+    color: $text-disabled;
+    background: $btn-disabled;
+    cursor: not-allowed;
+  }
 }
 
 // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .btn {
     padding: 1.25rem 1rem;
     font-size: 0.875rem;
+    min-width: 100%;
   }
 }
 

@@ -1,8 +1,15 @@
-export default function FirstPost({ title, icon, onClick }) {
+import classNames from "classnames";
+const Button = ({ children, icon, onClick, disabled, fullwidth }) => {
   return (
-    <button className="btn" onClick={onClick ? onClick : undefined}>
+    <button
+      className={classNames("btn", fullwidth && "btn-full-width")}
+      disabled={disabled}
+      onClick={onClick ? onClick : undefined}
+    >
       {icon && <span>{icon}</span>}
-      {title}
+      {children}
     </button>
   );
-}
+};
+
+export default Button;

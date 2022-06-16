@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+main {
+  height: calc(100vh - 82px);
+  font-family: $font-sans;
+  overflow: hidden;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  main {
+    height: calc(100vh - 138px);
+    overflow-y: auto;
+  }
+}

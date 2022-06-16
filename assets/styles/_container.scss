@@ -1,0 +1,53 @@
+.container {
+  padding: 60px;
+
+  &.fluid {
+    padding-top: 0px;
+    height: 100%;
+    display: flex;
+    .center {
+      margin: auto 0px;
+    }
+  }
+}
+
+.home-image-container {
+  position: relative;
+  max-width: 469px;
+  border: 1px solid $border;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (325 / 469) * 100%;
+  }
+  > .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.home-image-container .social-container {
+  margin-top: -1px;
+  border-top: 1px solid $border;
+  height: 40px;
+  width: 100%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .container {
+    padding: 1.5rem;
+    &.fluid {
+      padding: 1.5rem;
+      display: block;
+      height: auto;
+    }
+  }
+  .container.fluid .center {
+    margin: 0;
+  }
+}

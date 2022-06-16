@@ -1,6 +1,11 @@
 import "../assets/styles/styles.scss";
+import MainLayout from "../layouts/MainLayout";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <MainLayout>
+      <Component {...pageProps} />
+    </MainLayout>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
