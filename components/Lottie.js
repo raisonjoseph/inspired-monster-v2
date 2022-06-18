@@ -1,13 +1,31 @@
 import { useEffect, useRef, useState } from "react";
 import AnimationData from "../assets/lottie/listening_music.json";
 
-export const LottieAnimation = () => {
+export const LottieAnimation = ({ onMusicClick }) => {
   const ref = useRef();
   const [lottie, setLottie] = useState(null);
 
   useEffect(() => {
     import("lottie-web").then((Lottie) => setLottie(Lottie.default));
   }, []);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    let graphElement = null;
+    const onClickEvent = () => {
+      onMusicClick?.();
+    };
+    const timeout = setTimeout(() => {
+      const svg = ref.current.firstChild;
+      const graphParent = svg.lastChild.lastChild;
+      graphElement = graphParent.lastChild;
+      graphElement.addEventListener("click", onClickEvent);
+    }, 1000);
+    return () => {
+      clearInterval(timeout);
+      graphElement.removeEventListener("click", onClickEvent);
+    };
+  }, [ref, onMusicClick]);
 
   useEffect(() => {
     if (lottie && ref.current) {
@@ -24,5 +42,5 @@ export const LottieAnimation = () => {
     }
   }, [lottie, ref]);
 
-  return <div ref={ref} />;
+  return <div id="lottie" ref={ref} />;
 };

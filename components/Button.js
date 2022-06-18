@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Image from "next/image";
 const Button = ({ children, icon, onClick, disabled, fullwidth }) => {
   return (
     <button
@@ -6,7 +7,11 @@ const Button = ({ children, icon, onClick, disabled, fullwidth }) => {
       disabled={disabled}
       onClick={onClick ? onClick : undefined}
     >
-      {icon && <span>{icon}</span>}
+      {icon && (
+        <span className="icon prepend whatsapp">
+          <Image className="icon" src={icon} alt="nav" />
+        </span>
+      )}
       {children}
     </button>
   );

@@ -1,9 +1,21 @@
 import Head from "next/head";
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../components/Button";
 import { LottieAnimation } from "../components/Lottie";
+import WhatsappIcon from "../assets/images/whatsapp.svg";
+import TwitterIcon from "../assets/images/twitter_lg.svg";
+import InstagramIcon from "../assets/images/instagram_lg.svg";
+import LinkedinIcon from "../assets/images/linkedin_lg.svg";
+import DribbleIcon from "../assets/images/dribble_lg.svg";
+import SocialItem from "../components/SocialItem";
 
 export default function Home() {
+  useEffect(() => {}, []);
+
+  const handleHeadPhoneClick = () => {
+    console.log("Play some fukin songs");
+  };
+
   return (
     <div className="container fluid">
       <div className="center">
@@ -11,9 +23,14 @@ export default function Home() {
           <div className="col-home">
             <div className="home-image-container">
               <div className="inner">
-                <LottieAnimation />
+                <LottieAnimation onMusicClick={handleHeadPhoneClick} />
               </div>
-              <div className="social-container"></div>
+              <div className="social-container">
+                <SocialItem path="" icon={DribbleIcon} />
+                <SocialItem path="" icon={TwitterIcon} />
+                <SocialItem path="" icon={LinkedinIcon} />
+                <SocialItem path="" icon={InstagramIcon} />
+              </div>
             </div>
           </div>
           <div className="col-home">
@@ -22,7 +39,7 @@ export default function Home() {
               Kochi, India, withover 7 years of experience in delivering
               world-class UI/UX, interaction andvisual designs.
             </h2>
-            <Button>Chat Now</Button>
+            <Button icon={WhatsappIcon}>Chat Now</Button>
           </div>
         </div>
       </div>

@@ -16,6 +16,11 @@
   letter-spacing: 0.0025em;
 }
 
+@media (max-width: 992px) {
+  .title-1 {
+    font-size: 1.5rem;
+  }
+}
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .title-1 {

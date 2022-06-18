@@ -5,6 +5,17 @@
   column-gap: 3rem;
   flex-wrap: wrap;
   .col-home {
-    flex: 1 1 210px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .row {
+    .col-home {
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 0;
+      min-width: 0;
+    }
   }
 }
