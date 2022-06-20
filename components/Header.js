@@ -11,7 +11,7 @@ import ContactActiveIcon from "../assets/images/contact_active.svg";
 import AboutInactiveIcon from "../assets/images/about_inactive.svg";
 import AboutActiveIcon from "../assets/images/about_active.svg";
 import TwitterIcon from "../assets/images/twitter.svg";
-import InstagramIcon from "../assets/images/linkedin.svg";
+import InstagramIcon from "../assets/images/instagram_sm.svg";
 import LinkedinIcon from "../assets/images/linkedin.svg";
 import DribbleIcon from "../assets/images/dribble.svg";
 import NavItem from "./NavItem";
