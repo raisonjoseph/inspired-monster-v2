@@ -22,10 +22,10 @@ const Header = () => {
     <header className="navbar">
       <div className="container">
         <div className="logo">
-          <img className="icon" src={Logo} alt="logo" />
+          <Image className="icon" src={Logo} alt="logo" />
         </div>
         <div className="social-elements">
-          <SocialItem path="" icon={require("../assets/images/dribble.svg")} />
+          <SocialItem path="" icon={DribbleIcon} />
           <SocialItem path="" icon={TwitterIcon} />
           <SocialItem path="" icon={LinkedinIcon} />
           <SocialItem path="" icon={InstagramIcon} />
