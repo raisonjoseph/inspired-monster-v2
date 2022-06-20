@@ -19,8 +19,8 @@ export default function Home() {
   return (
     <div className="container fluid">
       <div className="center">
-        <div className="row">
-          <div className="col-home">
+        <div className="row gutter">
+          <div className="col-sm">
             <div className="home-image-container">
               <div className="inner">
                 <LottieAnimation onMusicClick={handleHeadPhoneClick} />
@@ -33,7 +33,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-home">
+          <div className="col-sm">
             <h2 className="title-1 secondary">
               I am <b>Arun Sajeev</b>, a multidisciplinary designer based in
               Kochi, India, withover 7 years of experience in delivering

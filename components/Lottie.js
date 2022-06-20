@@ -23,7 +23,7 @@ export const LottieAnimation = ({ onMusicClick }) => {
     }, 1000);
     return () => {
       clearInterval(timeout);
-      graphElement.removeEventListener("click", onClickEvent);
+      graphElement?.removeEventListener("click", onClickEvent);
     };
   }, [ref, onMusicClick]);
 
