@@ -7,36 +7,41 @@ import ContactInactiveIcon from "../assets/images/contact_inactive.svg";
 import ContactActiveIcon from "../assets/images/contact_active.svg";
 import AboutInactiveIcon from "../assets/images/about_inactive.svg";
 import AboutActiveIcon from "../assets/images/about_active.svg";
+import { useRouter } from "next/router";
 
 const BottomNav = () => {
+  const router = useRouter();
   return (
     <div className="bottom-nav">
       <NavItem
         path="/"
         inactiveIcon={HomeInactiveIcon}
         activeIcon={HomeActiveIcon}
-        active
+        active={router.pathname === "/"}
       >
         Home
       </NavItem>
       <NavItem
-        path="/"
+        path="/works"
         inactiveIcon={WorkInactiveIcon}
         activeIcon={WorkActiveIcon}
+        active={router.pathname === "/works"}
       >
         Works
       </NavItem>
       <NavItem
-        path="/"
+        path="/contact"
         inactiveIcon={ContactInactiveIcon}
         activeIcon={ContactActiveIcon}
+        active={router.pathname === "/contact"}
       >
         Contact
       </NavItem>
       <NavItem
-        path="/"
+        path="/about-me"
         inactiveIcon={AboutInactiveIcon}
         activeIcon={AboutActiveIcon}
+        active={router.pathname === "/about-me"}
       >
         About
       </NavItem>

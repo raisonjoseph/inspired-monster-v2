@@ -4,6 +4,7 @@
   height: 82px;
   width: 100%;
   box-shadow: 0px 1px 0px $nav-border;
+  z-index: 2;
   .container {
     display: flex;
     justify-content: space-between;
@@ -12,7 +13,6 @@
     .nav-items {
       font-family: $font-sans;
       display: flex;
-      align-items: center;
       justify-content: space-evenly;
       .nav-item {
         display: flex;
@@ -61,7 +61,7 @@
             position: absolute;
             bottom: -2px;
             left: 0;
-            width: 101%;
+            width: 100%;
             height: 8px;
             background-color: $monster-red;
           }
@@ -163,7 +163,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 101%;
+        width: 100%;
         height: 4px;
         background-color: $monster-red;
       }

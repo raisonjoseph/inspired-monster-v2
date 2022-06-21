@@ -70,3 +70,21 @@
     }
   }
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 1280px) {
+  .container {
+    &.fluid {
+      height: 100%;
+      justify-content: center;
+      .center {
+        max-width: 1280px;
+      }
+    }
+  }
+  .home-image-container {
+    .social-container {
+      display: none;
+    }
+  }
+}

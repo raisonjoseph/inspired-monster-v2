@@ -6,10 +6,6 @@ import Header from "../components/Header";
 const MainLayout = ({ children }) => {
   return (
     <React.Fragment>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Header />
       <main>{children}</main>
       <BottomNav />

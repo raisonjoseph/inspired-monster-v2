@@ -16,8 +16,10 @@ import LinkedinIcon from "../assets/images/linkedin.svg";
 import DribbleIcon from "../assets/images/dribble.svg";
 import NavItem from "./NavItem";
 import SocialItem from "./SocialItem";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
   return (
     <header className="navbar">
       <div className="container">
@@ -35,7 +37,7 @@ const Header = () => {
             path="/"
             inactiveIcon={HomeInactiveIcon}
             activeIcon={HomeActiveIcon}
-            active
+            active={router.pathname === "/"}
           >
             Home
           </NavItem>
@@ -43,20 +45,23 @@ const Header = () => {
             path="./about-me/"
             inactiveIcon={AboutInactiveIcon}
             activeIcon={AboutActiveIcon}
+            active={router.pathname === "/about-me"}
           >
             About me
           </NavItem>
           <NavItem
-            path="/"
+            path="./works/"
             inactiveIcon={WorkInactiveIcon}
             activeIcon={WorkActiveIcon}
+            active={router.pathname === "/works"}
           >
             Works
           </NavItem>
           <NavItem
-            path="/"
+            path="/contact"
             inactiveIcon={ContactInactiveIcon}
             activeIcon={ContactActiveIcon}
+            active={router.pathname === "/contact"}
           >
             Contact
           </NavItem>
