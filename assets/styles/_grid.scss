@@ -5,6 +5,9 @@
   &.gutter {
     column-gap: 3rem;
   }
+  &.gutter-3 {
+    column-gap: 1.5rem;
+  }
   flex-wrap: wrap;
   .col-sm {
     width: 100%;
