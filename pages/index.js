@@ -8,6 +8,7 @@ import InstagramIcon from "../assets/images/instagram_lg.svg";
 import LinkedinIcon from "../assets/images/linkedin_lg.svg";
 import DribbleIcon from "../assets/images/dribble_lg.svg";
 import SocialItem from "../components/SocialItem";
+import constants from "../utils/constants";
 
 export default function Home() {
   useEffect(() => {}, []);
