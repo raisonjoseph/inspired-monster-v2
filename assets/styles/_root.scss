@@ -8,11 +8,11 @@ main {
   font-family: $font-sans;
   overflow: hidden;
 }
-
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   main {
-    height: calc(100vh - 138px);
+    height: calc(100vh - 136px);
     overflow-y: auto;
+    overflow-x: hidden;
   }
 }

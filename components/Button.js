@@ -1,6 +1,13 @@
 import classNames from "classnames";
 import Image from "next/image";
-const Button = ({ children, icon, onClick, disabled, fullwidth }) => {
+const Button = ({
+  children,
+  icon,
+  onClick,
+  disabled,
+  fullwidth,
+  variant = "whatsapp",
+}) => {
   return (
     <button
       className={classNames("btn", fullwidth && "btn-full-width")}
@@ -8,7 +15,12 @@ const Button = ({ children, icon, onClick, disabled, fullwidth }) => {
       onClick={onClick ? onClick : undefined}
     >
       {icon && (
-        <span className="icon prepend whatsapp">
+        <span
+          className={classNames(
+            "icon prepend",
+            variant === "whatsapp" ? "whatsapp" : "dribble"
+          )}
+        >
           <Image className="icon" src={icon} alt="nav" />
         </span>
       )}

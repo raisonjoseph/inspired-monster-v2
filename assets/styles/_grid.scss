@@ -40,5 +40,14 @@
       flex: 0 0 percentage(1 / 12 * 7);
       max-width: percentage(1 / 12 * 7);
     }
+    .col-sm-4 {
+      flex: 0 0 percentage(1 / 12 * 4);
+      max-width: percentage(1/ 12 * 4);
+    }
+
+    .col-sm-8 {
+      flex: 0 0 percentage(1 / 12 * 8);
+      max-width: percentage(1 / 12 * 8);
+    }
   }
 }

@@ -42,7 +42,7 @@ const Header = () => {
             Home
           </NavItem>
           <NavItem
-            path="./about-me/"
+            path="/about-me/"
             inactiveIcon={AboutInactiveIcon}
             activeIcon={AboutActiveIcon}
             active={router.pathname === "/about-me"}
@@ -50,10 +50,13 @@ const Header = () => {
             About me
           </NavItem>
           <NavItem
-            path="./works/"
+            path="/works/"
             inactiveIcon={WorkInactiveIcon}
             activeIcon={WorkActiveIcon}
-            active={router.pathname === "/works"}
+            active={
+              router.pathname === "/works" ||
+              router.pathname === `/works/[workId]`
+            }
           >
             Works
           </NavItem>

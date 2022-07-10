@@ -36,6 +36,14 @@
         top: 20px;
         left: 24px;
       }
+      &.dribble {
+        top: 16px;
+        left: 16px;
+        span {
+          width: 40px !important;
+          height: 40px !important;
+        }
+      }
     }
   }
 }
@@ -75,6 +83,14 @@
           span {
             width: 20px !important;
             height: 20px !important;
+          }
+        }
+        &.dribble {
+          top: 12px;
+          left: 12px;
+          span {
+            width: 32px !important;
+            height: 32px !important;
           }
         }
       }
