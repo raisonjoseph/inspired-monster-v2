@@ -30,16 +30,33 @@ const Contact = () => {
         <title>Inspired Monster | About me</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="h-100">
+      <section className="h-100 contact-us">
         <div className="row h-100">
           <div className="col-sm-5">
-            <div className="section lets-chat">
+            <div className="lets-chat">
               <div className="content">
                 <h2>Let’s Chat! 💬</h2>
                 <p>
-                  For quick replies call me (📲 9946701501). For easy connect,
-                  find me on instagram or you can also email me at
-                  arun14949@gmail.com
+                  For quick replies call me (📲
+                  <a href="tel:9946701501" target="_blank" rel="noreferrer">
+                    9946701501
+                  </a>
+                  ) . For easy connect, find me on{" "}
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    instagram
+                  </a>{" "}
+                  or you can also email me at&nbsp;
+                  <a
+                    href="mailto:arun14949@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    arun14949@gmail.com
+                  </a>
                 </p>
               </div>
               <div className="footer">

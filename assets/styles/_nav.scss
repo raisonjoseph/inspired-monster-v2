@@ -9,6 +9,8 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 60px;
+    max-width: 1280px;
+    margin: 0px auto;
 
     .nav-items {
       font-family: $font-sans;
@@ -23,6 +25,7 @@
         align-items: center;
         flex: 1;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
 
         .content {
           width: max-content;
@@ -38,7 +41,6 @@
           font-weight: 500;
           line-height: 120%;
           text-align: center;
-          margin-top: 4px;
         }
         .icon-container {
           display: none;

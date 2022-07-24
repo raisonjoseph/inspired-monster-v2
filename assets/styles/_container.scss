@@ -1,5 +1,5 @@
 .container {
-  padding: 60px;
+  padding: 0px 60px;
 
   &.fluid {
     padding-top: 0px;
@@ -76,15 +76,10 @@
   .container {
     &.fluid {
       height: 100%;
-      justify-content: center;
       .center {
         max-width: 1280px;
+        margin: auto;
       }
-    }
-  }
-  .home-image-container {
-    .social-container {
-      display: none;
     }
   }
 }

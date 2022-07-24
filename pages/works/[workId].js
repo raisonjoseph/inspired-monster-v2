@@ -76,7 +76,7 @@ const WorkLanding = () => {
                 )}
               </div>
 
-              <div className="slider-switcher">
+              {/* <div className="slider-switcher">
                 <div
                   className={classNames(
                     "switcher-element",
@@ -97,7 +97,7 @@ const WorkLanding = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-sm-4">
@@ -130,25 +130,6 @@ const WorkLanding = () => {
                 </a>
               </div>
             </div>
-          </div>
-          <div className="footer">
-            <button className="slider-button" onClick={onMore}>
-              <span className="material-symbols-rounded">close</span>
-            </button>
-            <button
-              className="slider-button"
-              disabled={activeWorkIndex === 0}
-              onClick={handlePrev}
-            >
-              <span className="material-symbols-rounded">chevron_left</span>
-            </button>
-            <button
-              className="slider-button"
-              disabled={activeWorkIndex === dribbleWorks.length - 1}
-              onClick={handleNext}
-            >
-              <span className="material-symbols-rounded">chevron_right</span>
-            </button>
           </div>
         </div>
       </section>

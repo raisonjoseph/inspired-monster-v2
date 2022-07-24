@@ -1,5 +1,7 @@
-.section {
-  &.lets-chat {
+section.contact-us {
+  max-width: 1280px;
+  margin: 0px auto;
+  .lets-chat {
     position: relative;
     display: flex;
     height: 100%;
@@ -19,13 +21,20 @@
         margin: 0;
         margin-right: 3rem;
       }
-      p {
+      p,
+      a {
         margin: 0;
         margin-top: 3rem;
         color: $text-secondary;
         font-size: 1.125rem;
         line-height: 180%;
         letter-spacing: 0.0025em;
+        font-weight: 400;
+        a {
+          font-weight: 500;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 3px;
+        }
       }
     }
 
@@ -45,13 +54,15 @@
       }
     }
   }
-  &.contact {
-    padding: 60px 60px 60px 120px;
+  .contact {
+    padding: 60px 60px 0px 120px;
     display: flex;
     margin: auto;
     height: 100%;
     .content {
-      padding-bottom: 3rem;
+      .row {
+        overflow: visible;
+      }
       h3 {
         color: $text-primary;
         font-family: $font-serif;
@@ -65,18 +76,18 @@
         }
       }
       .projects {
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: 1.5rem;
-        column-gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding-right: 3px;
 
         //set dimensions for invisible container
         .project-item {
           position: relative;
           height: fit-content;
           min-width: 172px;
-          flex-basis: 0;
           flex-grow: 1;
+          flex-basis: 0;
           max-width: 100%;
 
           //make actual radio input invisible
@@ -123,14 +134,26 @@
     }
   }
 }
+@media (min-width: 1281px) {
+  section.contact-us {
+    .lets-chat {
+      .content {
+        padding-left: 0px;
+      }
+    }
+    .contact {
+      padding-right: 0px;
+      .content {
+        width: 100%;
+      }
+    }
+  }
+}
 
 @media (max-width: 576px) {
-  section {
+  section.contact-us {
     padding: 3rem 1.5rem 1.5rem 1.5rem;
-  }
-  .section {
-    padding: 0px;
-    &.lets-chat {
+    .lets-chat {
       position: relative;
       display: flex;
       height: 100%;
@@ -165,7 +188,7 @@
       }
     }
 
-    &.contact {
+    .contact {
       padding: 0px;
       display: flex;
       margin: auto;
@@ -195,6 +218,7 @@
           flex-wrap: wrap;
           row-gap: 1.5rem;
           column-gap: 1.5rem;
+          grid-template-columns: repeat(2, 1fr);
 
           //set dimensions for invisible container
           .project-item {

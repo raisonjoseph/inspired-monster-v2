@@ -1,19 +1,36 @@
 import Head from "next/head";
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import Button from "../../components/Button";
 
 const AboutMe = () => {
+  const contentRef = useRef(null);
+  const footerRef = useRef(null);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      if (!contentRef.current || !footerRef.current) return;
+      const contentXPos = contentRef.current.getBoundingClientRect().x;
+      footerRef.current.style.width = `${
+        contentXPos + contentRef.current.clientWidth
+      }px`;
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
     <React.Fragment>
       <Head>
         <title>Inspired Monster | About me</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="h-100">
+      <section className="about-me h-100">
+        <div className="fake-fill" />
         <div className="row h-100">
           <div className="col-sm-5">
-            <div className="section insta-reel">
-              <div className="content">
+            <div className="insta-reel">
+              <div className="content" ref={contentRef}>
                 <h2>I observe things, Occasionally I connect them ✨</h2>
                 <div className="reels">
                   <div className="reel-item"></div>
@@ -21,8 +38,11 @@ const AboutMe = () => {
                   <div className="reel-item"></div>
                 </div>
               </div>
-              <div className="footer">
-                <p>© {new Date().getFullYear()} Inspired Monster · Credits</p>
+              <div className="footer" ref={footerRef}>
+                <p>
+                  © {new Date().getFullYear()} Inspired Monster ·
+                  <span> Credits</span>
+                </p>
               </div>
             </div>
           </div>
@@ -42,9 +62,9 @@ const AboutMe = () => {
                   positive experiences.
                 </p>
                 <p>
-                  Having worked with India2 Startups and communities, I am
-                  skilled at following Agile, communicating stakeholder needs,
-                  and cross-functional collaboration.
+                  Having worked with <b>India2 Startups</b> and communities, I
+                  am skilled at following Agile, communicating stakeholder
+                  needs, and cross-functional collaboration.
                 </p>
                 <Button>Download Resume</Button>
               </div>

@@ -1,17 +1,30 @@
 .works {
   padding: 48px 60px 0px 60px;
-  height: calc(100vh - 82px);
-  overflow-y: auto;
+  height: calc(100vh - 134px);
+  max-width: 1264px;
+  margin: 0px auto;
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 202px repeat(auto-fill, 202px);
-    padding: 0;
+    padding: 0px;
+    padding-bottom: 60px;
     gap: 1.5rem;
     .item {
       grid-column: auto / span 1;
       grid-row: auto / span 1;
       cursor: pointer;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        padding-bottom: calc(3 / 4 * 100%);
+      }
+      span:first-child {
+        position: absolute !important;
+        top: 0;
+      }
       span {
         width: 100% !important;
         height: 100% !important;
@@ -40,8 +53,17 @@
 
 ///
 .work-landing {
-  padding: 48px 60px 36px 60px;
-  height: 100%;
+  padding: 48px 60px 0px 60px;
+  height: calc(100vh - 134px);
+  max-width: 1280px;
+  margin: 0px auto;
+  overflow: visible;
+  .row {
+    overflow: visible;
+    .col-sm-4 {
+      overflow: visible;
+    }
+  }
   .slider-container {
     padding-right: 1.5rem;
     .image-container {
@@ -52,7 +74,7 @@
         display: block;
         content: "";
         width: 100%;
-        padding-top: 75.989%;
+        padding-top: 75%;
       }
       span {
         position: absolute !important;
@@ -91,6 +113,7 @@
   }
   .contents {
     height: calc(100vh - 134px);
+    width: calc(100% - 4px);
     h3 {
       color: $text-primary;
       font-weight: 700;
@@ -186,7 +209,6 @@
     .container {
       padding: 0;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 117px repeat(auto-fill, 117px);
     }
   }
   .work-landing {

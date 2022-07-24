@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 const Button = ({
   children,
+  className,
   icon,
   onClick,
   disabled,
@@ -10,7 +11,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={classNames("btn", fullwidth && "btn-full-width")}
+      className={classNames(className, "btn", fullwidth && "btn-full-width")}
       disabled={disabled}
       onClick={onClick ? onClick : undefined}
     >

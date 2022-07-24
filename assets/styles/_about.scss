@@ -1,5 +1,16 @@
-.section {
-  &.insta-reel {
+.about-me {
+  margin: 0px auto;
+  padding-left: 0px;
+  .fake-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $lighter-red;
+    display: none;
+    width: 30%;
+    height: 100%;
+  }
+  .insta-reel {
     background: $lighter-red;
     position: relative;
     display: flex;
@@ -66,11 +77,14 @@
         font-size: 1rem;
         font-weight: 500;
         margin: 0;
+        span {
+          cursor: pointer;
+        }
       }
     }
   }
-  &.info {
-    padding: 60px 60px 60px 120px;
+  .info {
+    padding: 0px 60px 0px 120px;
     display: flex;
     align-items: center;
     margin: auto;
@@ -99,6 +113,29 @@
       .btn {
         margin-top: 1.5rem;
       }
+    }
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1400px) {
+  .about-me {
+    padding-left: 60px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .about-me {
+    max-width: 1280px;
+    margin-left: auto;
+    .insta-reel {
+      position: static;
+      .content {
+        padding-left: 0;
+      }
+    }
+    .fake-fill {
+      display: block;
+      z-index: -1;
     }
   }
 }

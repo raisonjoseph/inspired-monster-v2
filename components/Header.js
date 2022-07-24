@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo.svg";
 import HomeInactiveIcon from "../assets/images/home_inactive.svg";
 import HomeActiveIcon from "../assets/images/home_active.svg";
 import WorkInactiveIcon from "../assets/images/works_inactive.svg";
