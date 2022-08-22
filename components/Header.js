@@ -17,6 +17,7 @@ import DribbleIcon from "../assets/images/dribble.svg";
 import NavItem from "./NavItem";
 import SocialItem from "./SocialItem";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Header = () => {
   const router = useRouter();
@@ -24,7 +25,9 @@ const Header = () => {
     <header className="navbar">
       <div className="container">
         <div className="logo">
-          <Image className="icon" src={Logo} alt="logo" />
+          <Link href="./">
+            <Image className="icon" src={Logo} alt="logo" />
+          </Link>
         </div>
         <div className="social-elements">
           <SocialItem path="" icon={DribbleIcon} />

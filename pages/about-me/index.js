@@ -67,6 +67,12 @@ const AboutMe = () => {
                   needs, and cross-functional collaboration.
                 </p>
                 <Button>Download Resume</Button>
+                <div className="footer">
+                  <p>
+                    © {new Date().getFullYear()} Inspired Monster ·
+                    <span> Credits</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

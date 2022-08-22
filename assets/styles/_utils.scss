@@ -16,3 +16,9 @@
 .mt-5 {
   margin-top: 3.5rem !important;
 }
+
+@media (max-width: 576px) {
+  .mt-sm-3 {
+    margin-top: 1.5rem !important;
+  }
+}

@@ -5,7 +5,7 @@ import Button from "../../components/Button";
 const Contact = () => {
   const [name, setName] = useState("");
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
-  const [project, setProject] = useState("Website");
+  const [project, setProject] = useState();
   const [projectDescription, setProjectDescription] = useState("");
 
   const handleOnNameChange = (e) => {

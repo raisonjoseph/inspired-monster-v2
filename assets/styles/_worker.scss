@@ -207,7 +207,6 @@
     padding: 24px;
     height: calc(100vh - 184px);
     .container {
-      padding: 0;
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -216,6 +215,8 @@
     height: calc(100vh - 184px);
     .row {
       align-items: flex-start;
+      flex-direction: column;
+      justify-content: start;
     }
     .slider-container {
       padding: 0;
@@ -241,6 +242,7 @@
       padding: 1.5rem;
       padding-bottom: 0;
       height: 100%;
+      width: calc(100% - 3rem);
       h3 {
         margin: 0;
         font-size: 1rem;

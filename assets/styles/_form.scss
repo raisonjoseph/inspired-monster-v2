@@ -40,3 +40,19 @@
     }
   }
 }
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .form-group {
+    .floating-label {
+      font-size: 0.875rem;
+    }
+    input,
+    textarea {
+      font-size: 0.875rem;
+      &:focus ~ .floating-label,
+      &:valid ~ .floating-label {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

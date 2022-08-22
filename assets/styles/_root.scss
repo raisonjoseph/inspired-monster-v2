@@ -16,5 +16,9 @@ main {
     height: calc(100vh - 136px);
     overflow-y: auto;
     overflow-x: hidden;
+
+    &.extra-space {
+      height: calc(100vh - 192px);
+    }
   }
 }

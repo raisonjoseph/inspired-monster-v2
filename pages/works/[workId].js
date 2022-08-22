@@ -118,14 +118,14 @@ const WorkLanding = () => {
                   }}
                 />
               )}
-              <div className="mt-4">
+              <div className="mt-4 mt-sm-3">
                 <a
                   href={dribbleWorks[activeWorkIndex]?.html_url || "#view"}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Button icon={DribbleIcon} variant="dribble" fullwidth>
-                    View in Diribble
+                    View in Dribbble
                   </Button>
                 </a>
               </div>
