@@ -7,15 +7,20 @@ import Header from "../components/Header";
 const MainLayout = ({ children }) => {
   const [isNeedMorePadding, setIsNeedMorePadding] = useState(false);
   const initialHeight = useRef();
-
+  const innerWidth = useRef();
   useEffect(() => {
     initialHeight.current = window.innerHeight;
+    innerWidth.current = window.innerWidth;
     if (window.innerHeight < 740) setIsNeedMorePadding(true);
     function onWindowResize() {
+      if (innerWidth.current) {
+        if (window.innerWidth !== innerWidth.current) return;
+      }
       if (initialHeight.current > window.innerHeight)
         setIsNeedMorePadding(true);
       else setIsNeedMorePadding(false);
       initialHeight.current = window.innerHeight;
+      innerWidth.current = window.innerWidth;
     }
     window.addEventListener("resize", onWindowResize);
     return () => {

@@ -64,6 +64,10 @@
       overflow: visible;
     }
   }
+
+  .mobile-slider-nav {
+    display: none;
+  }
   .slider-container {
     padding-right: 1.5rem;
     .image-container {
@@ -114,6 +118,7 @@
   .contents {
     height: calc(100vh - 134px);
     width: calc(100% - 4px);
+    padding-left: 1.5rem;
     h3 {
       color: $text-primary;
       font-weight: 700;
@@ -215,8 +220,9 @@
     height: calc(100vh - 184px);
     .row {
       align-items: flex-start;
-      flex-direction: column;
       justify-content: start;
+      flex-direction: column;
+      flex-wrap: nowrap;
     }
     .slider-container {
       padding: 0;
@@ -236,6 +242,9 @@
     }
     .slider-nav {
       display: none;
+    }
+    .mobile-slider-nav {
+      display: flex;
     }
     .contents {
       margin-top: 0.5rem;

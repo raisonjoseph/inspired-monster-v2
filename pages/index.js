@@ -45,7 +45,7 @@ export default function Home() {
                 Kochi, India, withover 7 years of experience in delivering
                 world-class UI/UX, interaction and visual designs.
               </h2>
-              <Button icon={WhatsappIcon} className="mt-40">
+              <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
                 Chat Now
               </Button>
             </div>

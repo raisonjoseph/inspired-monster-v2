@@ -7,18 +7,22 @@ import Image from "next/image";
 import DribbleIcon from "../../assets/images/dribble_cta.svg";
 import Button from "../../components/Button";
 import classNames from "classnames";
+import BottomSliderControl from "../../components/BottomSliderControl";
+import Shimmer from "../../components/Shimmer";
 
 const WorkLanding = () => {
   const { query, push, back, replace } = useRouter();
 
   const [dribbleWorks, setDribbleWorks] = useState([]);
   const [activeWorkIndex, setActiveWorkIndex] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
     const fetchWorks = async () => {
       try {
+        setIsLoading(true);
         const response = await getShots();
         if (response) {
           setDribbleWorks(response.data);
@@ -26,6 +30,8 @@ const WorkLanding = () => {
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchWorks();
@@ -64,15 +70,19 @@ const WorkLanding = () => {
           <div className="col-sm-8">
             <div className="slider-container">
               <div className="image-container">
-                {dribbleWorks[activeWorkIndex]?.images && (
-                  <Image
-                    className="image"
-                    src={dribbleWorks[activeWorkIndex].images.two_x}
-                    alt={dribbleWorks[activeWorkIndex]?.title}
-                    width="100%"
-                    height="100%"
-                    layout="responsive"
-                  />
+                {isLoading ? (
+                  <Shimmer />
+                ) : (
+                  dribbleWorks[activeWorkIndex]?.images && (
+                    <Image
+                      className="image"
+                      src={dribbleWorks[activeWorkIndex].images.two_x}
+                      alt={dribbleWorks[activeWorkIndex]?.title}
+                      width="100%"
+                      height="100%"
+                      layout="responsive"
+                    />
+                  )
                 )}
               </div>
 
@@ -102,13 +112,15 @@ const WorkLanding = () => {
           </div>
           <div className="col-sm-4">
             <div className="contents">
-              <SliderControl
-                onMoreClick={onMore}
-                onNext={handleNext}
-                onPrev={handlePrev}
-                disableNext={activeWorkIndex === dribbleWorks.length - 1}
-                disablePrev={activeWorkIndex === 0}
-              />
+              {!isLoading && (
+                <SliderControl
+                  onMoreClick={onMore}
+                  onNext={handleNext}
+                  onPrev={handlePrev}
+                  disableNext={activeWorkIndex === dribbleWorks.length - 1}
+                  disablePrev={activeWorkIndex === 0}
+                />
+              )}
               <h3>{dribbleWorks[activeWorkIndex]?.title}</h3>
               {dribbleWorks[activeWorkIndex]?.description && (
                 <div
@@ -132,6 +144,13 @@ const WorkLanding = () => {
             </div>
           </div>
         </div>
+        <BottomSliderControl
+          onMoreClick={onMore}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          disableNext={activeWorkIndex === dribbleWorks.length - 1}
+          disablePrev={activeWorkIndex === 0}
+        />
       </section>
     </React.Fragment>
   );
