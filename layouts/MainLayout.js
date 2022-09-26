@@ -11,7 +11,6 @@ const MainLayout = ({ children }) => {
   useEffect(() => {
     initialHeight.current = window.innerHeight;
     innerWidth.current = window.innerWidth;
-    if (window.innerHeight < 740) setIsNeedMorePadding(true);
     function onWindowResize() {
       if (innerWidth.current) {
         if (window.innerWidth !== innerWidth.current) return;
@@ -27,8 +26,6 @@ const MainLayout = ({ children }) => {
       window.removeEventListener("resize", onWindowResize);
     };
   }, []);
-
-  console.log(isNeedMorePadding);
 
   return (
     <React.Fragment>
