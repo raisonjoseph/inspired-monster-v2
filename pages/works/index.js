@@ -55,6 +55,7 @@ const Works = () => {
                   alt={work.title}
                   width="100%"
                   height="100%"
+                  layout="fill"
                 />
               </div>
             ))}

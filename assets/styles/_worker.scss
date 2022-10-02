@@ -28,6 +28,7 @@
       span {
         width: 100% !important;
         height: 100% !important;
+        border: 1px solid $grey !important;
       }
       &:first-child {
         grid-column: span 2;
@@ -86,6 +87,7 @@
         right: 0;
         bottom: 0;
         left: 0;
+        border: 1px solid $grey !important;
       }
     }
     .slider-switcher {

@@ -10,24 +10,6 @@ export const LottieAnimation = ({ onMusicClick }) => {
   }, []);
 
   useEffect(() => {
-    if (!ref.current) return;
-    let graphElement = null;
-    const onClickEvent = () => {
-      onMusicClick?.();
-    };
-    const timeout = setTimeout(() => {
-      const svg = ref.current.firstChild;
-      const graphParent = svg.lastChild.lastChild;
-      graphElement = graphParent.lastChild;
-      graphElement.addEventListener("click", onClickEvent);
-    }, 1000);
-    return () => {
-      clearInterval(timeout);
-      graphElement?.removeEventListener("click", onClickEvent);
-    };
-  }, [ref, onMusicClick]);
-
-  useEffect(() => {
     if (lottie && ref.current) {
       const animation = lottie.loadAnimation({
         container: ref.current,
@@ -42,5 +24,5 @@ export const LottieAnimation = ({ onMusicClick }) => {
     }
   }, [lottie, ref]);
 
-  return <div id="lottie" ref={ref} />;
+  return <div id="lottie" onClick={onMusicClick} ref={ref} />;
 };

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { LottieAnimation } from "../components/Lottie";
 import WhatsappIcon from "../assets/images/whatsapp.svg";
@@ -9,12 +9,19 @@ import LinkedinIcon from "../assets/images/linkedin_lg.svg";
 import DribbleIcon from "../assets/images/dribble_lg.svg";
 import SocialItem from "../components/SocialItem";
 import constants from "../utils/constants";
+import SpotifyModal from "../components/SpotifyModal";
 
 export default function Home() {
-  useEffect(() => {}, []);
+  const [open, setOpen] = useState(false);
 
-  const handleHeadPhoneClick = () => {
-    console.log("Play some fukin songs");
+  const handleHeadPhoneClick = (e) => {
+    const rect = e.target.getBoundingClientRect();
+
+    setOpen(true);
+  };
+
+  const handleSpotifyClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -52,6 +59,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <SpotifyModal open={open} onClose={handleSpotifyClose} />
     </React.Fragment>
   );
 }

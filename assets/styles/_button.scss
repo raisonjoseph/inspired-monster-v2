@@ -53,6 +53,7 @@
 }
 
 #lottie {
+  cursor: pointer;
   svg {
     g {
       g {
@@ -79,6 +80,7 @@
     &.whatsapp-btn {
       min-width: 312px;
       width: 100%;
+      max-width: unset;
     }
     .icon {
       position: absolute;

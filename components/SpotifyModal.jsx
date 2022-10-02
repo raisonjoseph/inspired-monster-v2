@@ -1,16 +1,13 @@
-// @src/components/Modal.jsx
-
 import React from "react";
-import ReactModal from "react-modal";
-
-const Modal = ({ children, open, onClose, bottomSheet = false }) => {
+import Modal from "react-modal";
+const SpotifyModal = ({ open, onClose }) => {
   return (
-    <ReactModal
+    <Modal
       isOpen={open}
       onRequestClose={onClose}
       contentLabel="Modal"
       className={{
-        base: "modal-base",
+        base: "modal-base spotify",
         afterOpen: "modal-base_after-open",
         beforeClose: "modal-base_before-close",
       }}
@@ -22,9 +19,14 @@ const Modal = ({ children, open, onClose, bottomSheet = false }) => {
       shouldCloseOnOverlayClick={true}
       closeTimeoutMS={400}
     >
-      sd
-    </ReactModal>
+      <iframe
+        src="https://open.spotify.com/embed/playlist/71LsMvu7RimgBrMInifH2Y"
+        width="324"
+        height="277"
+        allow="encrypted-media"
+      />
+    </Modal>
   );
 };
 
-export default Modal;
+export default SpotifyModal;

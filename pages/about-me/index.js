@@ -1,8 +1,10 @@
 import Head from "next/head";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
+import Credits from "../../components/Credits";
 
 const AboutMe = () => {
+  const [showCredits, setShowCredits] = useState(false);
   const contentRef = useRef(null);
   const footerRef = useRef(null);
 
@@ -18,6 +20,15 @@ const AboutMe = () => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
+
+  const handleOnShowCreditsClick = () => {
+    console.log(["h"]);
+    setShowCredits(true);
+  };
+
+  const onCreditsClose = () => {
+    setShowCredits(false);
+  };
 
   return (
     <React.Fragment>
@@ -41,7 +52,7 @@ const AboutMe = () => {
               <div className="footer" ref={footerRef}>
                 <p>
                   © {new Date().getFullYear()} Inspired Monster ·
-                  <span> Credits</span>
+                  <span onClick={handleOnShowCreditsClick}> Credits</span>
                 </p>
               </div>
             </div>
@@ -70,7 +81,7 @@ const AboutMe = () => {
                 <div className="footer">
                   <p>
                     © {new Date().getFullYear()} Inspired Monster ·
-                    <span> Credits</span>
+                    <span onClick={handleOnShowCreditsClick}> Credits</span>
                   </p>
                 </div>
               </div>
@@ -78,6 +89,7 @@ const AboutMe = () => {
           </div>
         </div>
       </section>
+      <Credits open={showCredits} onClose={onCreditsClose} />
     </React.Fragment>
   );
 };
