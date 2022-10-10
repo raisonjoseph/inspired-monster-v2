@@ -54,8 +54,11 @@ section.contact-us {
       }
     }
   }
+  .row .col-sm-7 {
+    overflow-y: auto;
+  }
   .contact {
-    padding: 60px 60px 0px min(120px, 15%);
+    padding: 60px 60px 60px min(120px, 15%);
     display: flex;
     margin: auto;
     height: 100%;

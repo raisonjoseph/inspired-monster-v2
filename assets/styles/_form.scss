@@ -38,6 +38,33 @@
       line-height: 16px;
       color: $text-primary;
     }
+    &:invalid:not(:placeholder-shown) {
+      border-color: $monster-red;
+    }
+    &:invalid:not(:placeholder-shown) ~ span {
+      display: block;
+    }
+    &:invalid:not(:placeholder-shown) ~ .floating-label {
+      transform: translate(8px, -16px);
+      padding: 8px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 16px;
+      color: $monster-red;
+    }
+  }
+  span.hint {
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 120%;
+    display: none;
+    color: $text-secondary;
+    &.error {
+      color: $monster-red;
+    }
   }
 }
 // Small devices (landscape phones, 576px and up)

@@ -30,32 +30,30 @@ export default function Home() {
         <title>Inspired Monster</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container fluid">
-        <div className="center">
-          <div className="row gutter">
-            <div className="col-sm">
-              <div className="home-image-container">
-                <div className="inner">
-                  <LottieAnimation onMusicClick={handleHeadPhoneClick} />
-                </div>
-                <div className="social-container">
-                  <SocialItem path="" icon={DribbleIcon} />
-                  <SocialItem path="" icon={TwitterIcon} />
-                  <SocialItem path="" icon={LinkedinIcon} />
-                  <SocialItem path="" icon={InstagramIcon} />
-                </div>
+      <div className="container center">
+        <div className="row gutter">
+          <div className="col-sm">
+            <div className="home-image-container">
+              <div className="inner">
+                <LottieAnimation onMusicClick={handleHeadPhoneClick} />
+              </div>
+              <div className="social-container">
+                <SocialItem path="" icon={DribbleIcon} />
+                <SocialItem path="" icon={TwitterIcon} />
+                <SocialItem path="" icon={LinkedinIcon} />
+                <SocialItem path="" icon={InstagramIcon} />
               </div>
             </div>
-            <div className="col-sm">
-              <h2 className="title-1 secondary">
-                I am <b>Arun Sajeev</b>, a multidisciplinary designer based in
-                Kochi, India, withover 7 years of experience in delivering
-                world-class UI/UX, interaction and visual designs.
-              </h2>
-              <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
-                Chat Now
-              </Button>
-            </div>
+          </div>
+          <div className="col-sm">
+            <h2 className="title-1 secondary">
+              I am <b>Arun Sajeev</b>, a multidisciplinary designer based in
+              Kochi, India, withover 7 years of experience in delivering
+              world-class UI/UX, interaction and visual designs.
+            </h2>
+            <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
+              Chat Now
+            </Button>
           </div>
         </div>
       </div>

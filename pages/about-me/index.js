@@ -22,7 +22,6 @@ const AboutMe = () => {
   }, []);
 
   const handleOnShowCreditsClick = () => {
-    console.log(["h"]);
     setShowCredits(true);
   };
 

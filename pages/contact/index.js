@@ -48,7 +48,7 @@ const Contact = () => {
                     rel="noreferrer"
                   >
                     instagram
-                  </a>{" "}
+                  </a>
                   or you can also email me at&nbsp;
                   <a
                     href="mailto:arun14949@gmail.com"
@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-sm-7">
-            <div className="section contact">
+            <div className="contact">
               <div className="content">
                 <h3>Have a project to talk about?</h3>
                 <div className="row gutter-3">
@@ -74,6 +74,7 @@ const Contact = () => {
                       <input
                         type="text"
                         id="floating_name"
+                        placeholder=" "
                         onChange={handleOnNameChange}
                         value={name}
                         required
@@ -86,11 +87,16 @@ const Contact = () => {
                       <input
                         type="text"
                         id="floating_name"
+                        placeholder=" "
                         onChange={handleOnPhoneOrEmailChange}
                         value={phoneOrEmail}
                         required
+                        pattern="[789][0-9]\d{8,11}||[a-z0-9._%+-]+@[a-z0-9.-]+[\.]{1}[a-z]{2,}$"
                       />
                       <label className="floating-label">Email or Phone *</label>
+                      <span className="hint error">
+                        * Please enter a valid email or phone
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -191,15 +197,21 @@ const Contact = () => {
                     rows={4}
                     onChange={handleProjectDescriptionChange}
                     value={projectDescription}
+                    placeholder=" "
                   />
                   <label className="floating-label">
                     Describe your project *
                   </label>
                 </div>
                 <Button
-                  className="mt-4"
+                  className="mt-4 contact-submit"
                   disabled={
-                    !name || !phoneOrEmail || !project || !projectDescription
+                    !name ||
+                    !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
+                      phoneOrEmail
+                    ) ||
+                    !project ||
+                    !projectDescription
                   }
                 >
                   Submit Project

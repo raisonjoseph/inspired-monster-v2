@@ -212,14 +212,14 @@
 @media (max-width: 576px) {
   .works {
     padding: 24px;
-    height: calc(100vh - 184px);
+    height: auto;
     .container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   .work-landing {
     padding: 1.5rem 0px;
-    height: calc(100vh - 184px);
+    height: auto;
     .row {
       align-items: flex-start;
       justify-content: start;
