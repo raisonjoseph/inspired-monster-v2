@@ -76,7 +76,14 @@ const AboutMe = () => {
                   am skilled at following Agile, communicating stakeholder
                   needs, and cross-functional collaboration.
                 </p>
-                <Button>Download Resume</Button>
+                <a
+                  className="btn"
+                  href="https://drive.google.com/file/d/1hPngXYPnSo5Q2vZ_y3NLk6EUFdjPsRkZ/view"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Download Resume
+                </a>
                 <div className="footer">
                   <p>
                     © {new Date().getFullYear()} Inspired Monster ·

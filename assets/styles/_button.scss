@@ -1,15 +1,19 @@
 .btn {
   padding: 1.5rem 1rem;
   color: white;
+  display: inline-block;
   align-items: center;
+  box-sizing: border-box;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 120%;
+  text-align: center;
   background: $btn-base;
   outline: none;
   border: none;
   max-width: 320px;
   position: relative;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.6s ease;
   &.btn-full-width {

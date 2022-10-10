@@ -38,10 +38,22 @@ export default function Home() {
                 <LottieAnimation onMusicClick={handleHeadPhoneClick} />
               </div>
               <div className="social-container">
-                <SocialItem path="" icon={DribbleIcon} />
-                <SocialItem path="" icon={TwitterIcon} />
-                <SocialItem path="" icon={LinkedinIcon} />
-                <SocialItem path="" icon={InstagramIcon} />
+                <SocialItem
+                  path="https://dribbble.com/inspired_monster"
+                  icon={DribbleIcon}
+                />
+                <SocialItem
+                  path="https://twitter.com/inspired_monstr"
+                  icon={TwitterIcon}
+                />
+                <SocialItem
+                  path="https://www.linkedin.com/in/arunsajeev/"
+                  icon={LinkedinIcon}
+                />
+                <SocialItem
+                  path="https://www.instagram.com/inspired_monster/"
+                  icon={InstagramIcon}
+                />
               </div>
             </div>
           </div>
