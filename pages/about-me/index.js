@@ -1,7 +1,14 @@
 import Head from "next/head";
+import Image from "next/image";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
 import Credits from "../../components/Credits";
+import InstaThumbnail1 from "../../assets/images/insta_1.jpg";
+import InstaThumbnail2 from "../../assets/images/insta_2.jpg";
+import InstaThumbnail3 from "../../assets/images/insta_3.jpg";
+import InstaThumbnail4 from "../../assets/images/insta_4.jpg";
+import InstaThumbnail5 from "../../assets/images/insta_5.jpg";
+import InstaThumbnail6 from "../../assets/images/insta_6.jpg";
 
 const AboutMe = () => {
   const [showCredits, setShowCredits] = useState(false);
@@ -43,9 +50,84 @@ const AboutMe = () => {
               <div className="content" ref={contentRef}>
                 <h2>I observe things, Occasionally I connect them ✨</h2>
                 <div className="reels">
-                  <div className="reel-item"></div>
-                  <div className="reel-item"></div>
-                  <div className="reel-item"></div>
+                  <div className="reel-item">
+                    <a
+                      href="https://www.instagram.com/reel/CcK0FlaF3UZ/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        src={InstaThumbnail1}
+                        layout="responsive"
+                        alt="insta"
+                      />
+                    </a>
+                  </div>
+                  <div className="reel-item">
+                    <a
+                      href="https://www.instagram.com/reel/CiPCoURuWev/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        src={InstaThumbnail2}
+                        layout="responsive"
+                        alt="insta"
+                      />
+                    </a>
+                  </div>
+                  <div className="reel-item">
+                    <a
+                      href="https://www.instagram.com/reel/ChLtbHHFMxu/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        src={InstaThumbnail3}
+                        layout="responsive"
+                        alt="insta"
+                      />
+                    </a>
+                  </div>
+                  <div className="reel-item">
+                    <a
+                      href="https://www.instagram.com/reel/CgMivC1FHOe/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        src={InstaThumbnail4}
+                        layout="responsive"
+                        alt="insta"
+                      />
+                    </a>
+                  </div>
+                  <div className="reel-item">
+                    <a
+                      href="https://www.instagram.com/reel/Ce3ea2_loWc/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        src={InstaThumbnail5}
+                        layout="responsive"
+                        alt="insta"
+                      />
+                    </a>
+                  </div>
+                  <div className="reel-item">
+                    <a
+                      href="https://www.instagram.com/reel/CfQ6V3hoRz0/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        src={InstaThumbnail6}
+                        layout="responsive"
+                        alt="insta"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="footer" ref={footerRef}>
@@ -77,7 +159,7 @@ const AboutMe = () => {
                   needs, and cross-functional collaboration.
                 </p>
                 <a
-                  className="btn"
+                  className="btn resume"
                   href="https://drive.google.com/file/d/1hPngXYPnSo5Q2vZ_y3NLk6EUFdjPsRkZ/view"
                   target="_blank"
                   rel="noreferrer"

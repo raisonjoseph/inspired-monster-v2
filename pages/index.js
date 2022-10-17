@@ -30,7 +30,7 @@ export default function Home() {
         <title>Inspired Monster</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container center">
+      <div className="container center home">
         <div className="row gutter">
           <div className="col-sm">
             <div className="home-image-container">
@@ -63,9 +63,16 @@ export default function Home() {
               Kochi, India, withover 7 years of experience in delivering
               world-class UI/UX, interaction and visual designs.
             </h2>
-            <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
-              Chat Now
-            </Button>
+
+            <a
+              href=" https://wa.me/919946701501"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
+                Chat Now
+              </Button>
+            </a>
           </div>
         </div>
       </div>

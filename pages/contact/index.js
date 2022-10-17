@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
 
 const Contact = () => {
@@ -7,6 +7,21 @@ const Contact = () => {
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
   const [project, setProject] = useState();
   const [projectDescription, setProjectDescription] = useState("");
+  const contentRef = useRef(null);
+  const footerRef = useRef(null);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      if (!contentRef.current || !footerRef.current) return;
+      const contentXPos = contentRef.current.getBoundingClientRect().x;
+      footerRef.current.style.width = `${
+        contentXPos + contentRef.current.clientWidth
+      }px`;
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   const handleOnNameChange = (e) => {
     setName(e.target.value);
@@ -34,7 +49,7 @@ const Contact = () => {
         <div className="row h-100">
           <div className="col-sm-5">
             <div className="lets-chat">
-              <div className="content">
+              <div className="content" ref={contentRef}>
                 <h2>Let’s Chat! 💬</h2>
                 <p>
                   For quick replies call me (📲
@@ -43,11 +58,11 @@ const Contact = () => {
                   </a>
                   ) . For easy connect, find me on{" "}
                   <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/inspired_monster/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    instagram
+                    instagram&nbsp;
                   </a>
                   or you can also email me at&nbsp;
                   <a
@@ -59,7 +74,7 @@ const Contact = () => {
                   </a>
                 </p>
               </div>
-              <div className="footer">
+              <div className="footer" ref={footerRef}>
                 <p>© {new Date().getFullYear()} Inspired Monster · Credits</p>
               </div>
             </div>
