@@ -148,10 +148,10 @@ const AboutMe = () => {
                 </h2>
                 <p>
                   I am a multidisciplinary designer obsessed with problem
-                  solving. I specialise in User Experience and Interaction
-                  Design for digital goods in order to bridge the gap between
-                  users and their goals, while balancing business values and
-                  positive experiences.
+                  solving. I specialise in <b>User Experience</b> and
+                  Interaction Design for digital goods in order to bridge the
+                  gap between users and their goals, while balancing business
+                  values and positive experiences.
                 </p>
                 <p>
                   Having worked with <b>India2 Startups</b> and communities, I

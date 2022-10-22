@@ -1,8 +1,10 @@
 import Head from "next/head";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import Button from "../../components/Button";
+import Credits from "../../components/Credits";
 
 const Contact = () => {
+  const [showCredits, setShowCredits] = useState(false);
   const [name, setName] = useState("");
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
   const [project, setProject] = useState();
@@ -37,6 +39,13 @@ const Contact = () => {
 
   const handleProjectDescriptionChange = (e) => {
     setProjectDescription(e.target.value);
+  };
+  const handleOnShowCreditsClick = () => {
+    setShowCredits(true);
+  };
+
+  const onCreditsClose = () => {
+    setShowCredits(false);
   };
 
   return (
@@ -75,7 +84,10 @@ const Contact = () => {
                 </p>
               </div>
               <div className="footer" ref={footerRef}>
-                <p>© {new Date().getFullYear()} Inspired Monster · Credits</p>
+                <p>
+                  © {new Date().getFullYear()} Inspired Monster ·
+                  <span onClick={handleOnShowCreditsClick}> Credits</span>
+                </p>
               </div>
             </div>
           </div>
@@ -89,6 +101,7 @@ const Contact = () => {
                       <input
                         type="text"
                         id="floating_name"
+                        autoComplete="off"
                         placeholder=" "
                         onChange={handleOnNameChange}
                         value={name}
@@ -101,6 +114,7 @@ const Contact = () => {
                     <div className="form-group">
                       <input
                         type="text"
+                        autoComplete="off"
                         id="floating_name"
                         placeholder=" "
                         onChange={handleOnPhoneOrEmailChange}
@@ -213,6 +227,7 @@ const Contact = () => {
                     onChange={handleProjectDescriptionChange}
                     value={projectDescription}
                     placeholder=" "
+                    autoComplete="off"
                   />
                   <label className="floating-label">
                     Describe your project *
@@ -236,6 +251,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <Credits open={showCredits} onClose={onCreditsClose} />
     </React.Fragment>
   );
 };

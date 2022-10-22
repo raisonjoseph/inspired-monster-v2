@@ -205,7 +205,11 @@
     cursor: pointer;
     border-right: 1px solid $border;
     color: $grey;
-
+    transition: all 0.3s ease;
+    &:hover {
+      background: $light-red;
+      color: $monster-red;
+    }
     &:last-child {
       border: none;
     }
