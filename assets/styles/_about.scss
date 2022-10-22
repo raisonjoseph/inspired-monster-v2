@@ -161,7 +161,7 @@
 
 @media (max-width: 576px) {
   .about-me {
-    padding: 3rem 0rem 1.5rem 1.5rem;
+    padding: 3rem 0rem 1.5rem 0px;
     .insta-reel {
       display: block;
       background: white;
@@ -172,15 +172,16 @@
           font-size: 1.5rem;
           line-height: 120%;
           margin: 0;
-          padding-right: 1.5rem;
+          padding: 0 1.5rem;
         }
         .reels {
           margin-top: 2rem;
+
+          padding-left: 1.5rem;
           .reel-item {
             flex-shrink: 0;
             width: 120px;
             height: 186px;
-            border: 1px solid $monster-red;
           }
         }
       }
@@ -190,8 +191,7 @@
       }
     }
     .info {
-      padding: 2rem 0px;
-      padding-right: 1.5rem;
+      padding: 2rem 1.5rem;
       display: block;
       height: max-content;
       .content {
