@@ -1,7 +1,9 @@
 import Head from "next/head";
 import React, { useLayoutEffect, useRef, useState } from "react";
+import { sendMail } from "../../api/sendMail";
 import Button from "../../components/Button";
 import Credits from "../../components/Credits";
+import NotificationBanner from "../../components/NotificationBanner";
 
 const Contact = () => {
   const [showCredits, setShowCredits] = useState(false);
@@ -9,6 +11,7 @@ const Contact = () => {
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
   const [project, setProject] = useState();
   const [projectDescription, setProjectDescription] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
   const contentRef = useRef(null);
   const footerRef = useRef(null);
 
@@ -22,6 +25,7 @@ const Contact = () => {
     }
     window.addEventListener("resize", updateSize);
     updateSize();
+    setShowNotification(false);
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
@@ -48,12 +52,27 @@ const Contact = () => {
     setShowCredits(false);
   };
 
+  const handleSubmitClick = () => {
+    try {
+      const response = sendMail(
+        name,
+        phoneOrEmail,
+        project,
+        projectDescription
+      );
+      if (response) setShowNotification(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <React.Fragment>
       <Head>
         <title>Inspired Monster | About me</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <NotificationBanner isOpen={showNotification} isMobile />
       <section className="h-100 contact-us">
         <div className="row h-100">
           <div className="col-sm-5">
@@ -65,7 +84,7 @@ const Contact = () => {
                   <a href="tel:9946701501" target="_blank" rel="noreferrer">
                     9946701501
                   </a>
-                  ) . For easy connect, find me on{" "}
+                  ). For easy connect, find me on{" "}
                   <a
                     href="https://www.instagram.com/inspired_monster/"
                     target="_blank"
@@ -94,6 +113,7 @@ const Contact = () => {
           <div className="col-sm-7">
             <div className="contact">
               <div className="content">
+                <NotificationBanner isOpen={showNotification} />
                 <h3>Have a project to talk about?</h3>
                 <div className="row gutter-3">
                   <div className="col-sm">
@@ -243,6 +263,7 @@ const Contact = () => {
                     !project ||
                     !projectDescription
                   }
+                  onClick={handleSubmitClick}
                 >
                   Submit Project
                 </Button>
