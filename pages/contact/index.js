@@ -1,5 +1,6 @@
+import classNames from "classnames";
 import Head from "next/head";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { sendMail } from "../../api/sendMail";
 import Button from "../../components/Button";
 import Credits from "../../components/Credits";
@@ -15,7 +16,7 @@ const Contact = () => {
   const contentRef = useRef(null);
   const footerRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function updateSize() {
       if (!contentRef.current || !footerRef.current) return;
       const contentXPos = contentRef.current.getBoundingClientRect().x;
@@ -52,9 +53,9 @@ const Contact = () => {
     setShowCredits(false);
   };
 
-  const handleSubmitClick = () => {
+  const handleSubmitClick = async () => {
     try {
-      const response = sendMail(
+      const response = await sendMail(
         name,
         phoneOrEmail,
         project,
@@ -73,7 +74,9 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NotificationBanner isOpen={showNotification} isMobile />
-      <section className="h-100 contact-us">
+      <section
+        className={classNames("h-100 contact-us", showNotification && "pt-2")}
+      >
         <div className="row h-100">
           <div className="col-sm-5">
             <div className="lets-chat">
