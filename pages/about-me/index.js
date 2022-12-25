@@ -160,7 +160,7 @@ const AboutMe = () => {
                 </p>
                 <a
                   className="btn resume"
-                  href="https://drive.google.com/file/d/1hPngXYPnSo5Q2vZ_y3NLk6EUFdjPsRkZ/view"
+                  href="https://drive.google.com/file/d/1qLl699B5wEhUSmqsb1f6kYSedvuP6Nss/view"
                   target="_blank"
                   rel="noreferrer"
                 >

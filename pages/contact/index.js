@@ -12,7 +12,7 @@ const Contact = () => {
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
   const [project, setProject] = useState();
   const [projectDescription, setProjectDescription] = useState("");
-  const [showNotification, setShowNotification] = useState(false);
+  const [showNotification, setShowNotification] = useState(true);
   const contentRef = useRef(null);
   const footerRef = useRef(null);
 
@@ -26,7 +26,7 @@ const Contact = () => {
     }
     window.addEventListener("resize", updateSize);
     updateSize();
-    setShowNotification(false);
+    setShowNotification(true);
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
@@ -75,7 +75,7 @@ const Contact = () => {
       </Head>
       <NotificationBanner isOpen={showNotification} isMobile />
       <section
-        className={classNames("h-100 contact-us", showNotification && "pt-2")}
+        className={classNames("h-100 contact-us", showNotification && "pt-0")}
       >
         <div className="row h-100">
           <div className="col-sm-5">
@@ -114,7 +114,12 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-sm-7">
-            <div className="contact">
+            <div
+              className={classNames(
+                "contact",
+                showNotification && "notification-shown"
+              )}
+            >
               <div className="content">
                 <NotificationBanner isOpen={showNotification} />
                 <h3>Have a project to talk about?</h3>

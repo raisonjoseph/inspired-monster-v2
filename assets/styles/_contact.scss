@@ -58,12 +58,20 @@ section.contact-us {
   }
   .row .col-sm-7 {
     overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .contact {
     padding: 60px 60px 60px min(120px, 15%);
     display: flex;
     margin: auto;
     height: 100%;
+    &.notification-shown {
+      padding-bottom: 200px;
+    }
     .content {
       .row {
         overflow: visible;
@@ -215,6 +223,9 @@ section.contact-us {
       display: flex;
       margin: auto;
       height: 100%;
+      &.notification-shown {
+        padding-bottom: 0px;
+      }
       .content {
         padding-bottom: 3rem;
         h3 {
