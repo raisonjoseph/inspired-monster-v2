@@ -26,7 +26,7 @@ const Contact = () => {
     }
     window.addEventListener("resize", updateSize);
     updateSize();
-    setShowNotification(true);
+    setShowNotification(false);
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
