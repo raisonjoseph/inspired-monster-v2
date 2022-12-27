@@ -12,7 +12,7 @@ const Contact = () => {
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
   const [project, setProject] = useState();
   const [projectDescription, setProjectDescription] = useState("");
-  const [showNotification, setShowNotification] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
   const contentRef = useRef(null);
   const footerRef = useRef(null);
 
