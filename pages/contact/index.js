@@ -14,6 +14,7 @@ const Contact = () => {
   const [projectDescription, setProjectDescription] = useState("");
   const [showNotification, setShowNotification] = useState(false);
   const contentRef = useRef(null);
+  const contactRef = useRef(null);
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -61,7 +62,14 @@ const Contact = () => {
         project,
         projectDescription
       );
-      if (response) setShowNotification(true);
+      if (response) {
+        setShowNotification(true);
+        setName("");
+        setPhoneOrEmail("");
+        setProject("");
+        setProjectDescription("");
+        contactRef.current?.scrollTo(0, 0);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -113,7 +121,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-7">
+          <div className="col-sm-7" ref={contactRef}>
             <div
               className={classNames(
                 "contact",
@@ -263,14 +271,14 @@ const Contact = () => {
                 </div>
                 <Button
                   className="mt-4 contact-submit"
-                  disabled={
-                    !name ||
-                    !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
-                      phoneOrEmail
-                    ) ||
-                    !project ||
-                    !projectDescription
-                  }
+                  // disabled={
+                  //   !name ||
+                  //   !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
+                  //     phoneOrEmail
+                  //   ) ||
+                  //   !project ||
+                  //   !projectDescription
+                  // }
                   onClick={handleSubmitClick}
                 >
                   Submit Project

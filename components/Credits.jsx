@@ -31,26 +31,61 @@ const Credits = ({ open, onClose }) => {
             <div className="list-item">
               <span className="icon">💻</span>
               <p className="text">
-                <b>Raison Joseph & Athul Antony</b> for developing this website
-                pixel perfectly
+                <a
+                  href="https://www.linkedin.com/in/raison-joseph/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Raison Joseph
+                </a>
+                &nbsp;&&nbsp;
+                <a
+                  href="https://www.athulantony.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Athul Antony
+                </a>
+                &nbsp; for developing this website pixel perfectly
               </p>
             </div>
             <div className="list-item">
               <span className="icon">🎧</span>
               <p className="text">
-                <b>Spotify </b>for the music playlist widget
+                <a
+                  href="https://www.spotify.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Spotify&nbsp;
+                </a>
+                for the music playlist widget
               </p>
             </div>
             <div className="list-item">
               <span className="icon">😀</span>
               <p className="text">
-                <b>Emojipedia</b> for beautiful, free emoji’s
+                <a
+                  href="https://emojipedia.org"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Emojipedia&nbsp;
+                </a>
+                for beautiful, free emoji’s
               </p>
             </div>
             <div className="list-item">
               <span className="icon">🏀</span>
               <p className="text">
-                <b>Dribbble</b> for the shots listing API
+                <a
+                  href="https://dribbble.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Dribbble
+                </a>
+                for the shots listing API
               </p>
             </div>
           </div>
@@ -59,7 +94,13 @@ const Credits = ({ open, onClose }) => {
             <div className="list-item">
               <span className="icon">🌐</span>
               <p className="text">
-                <b>Itsallwidgets</b>
+                <a
+                  href="https://itsallwidgets.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Itsallwidgets
+                </a>
               </p>
             </div>
           </div>

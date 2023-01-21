@@ -25,6 +25,10 @@
     border: 1px solid $grey;
     color: $grey;
     cursor: pointer;
+    &:hover {
+      background: $light-red;
+      color: $monster-red;
+    }
   }
   .content {
     padding: 40px;
@@ -70,8 +74,12 @@
           color: $text-secondary;
           margin: 0;
           font-family: $font-sans;
-          b {
+          a {
             font-weight: 500;
+            color: inherit;
+            line-height: 160%;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
           }
         }
       }
