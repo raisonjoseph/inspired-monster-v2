@@ -16,6 +16,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const contentRef = useRef(null);
   const contactRef = useRef(null);
+  const sectionRef = useRef(null);
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -73,9 +74,13 @@ const Contact = () => {
         setProjectDescription("");
         setIsLoading(false);
         event.target.disabled = false;
-
-        contactRef.current?.scrollTo(0, 0);
+        //
+        contactRef.current?.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        document.body.scrollIntoView({
+          behavior: "smooth",
+        });
       }
+      await setShowNotification(true);
     } catch (error) {
       console.log(error);
     }
@@ -90,6 +95,7 @@ const Contact = () => {
       <NotificationBanner isOpen={showNotification} isMobile />
       <section
         className={classNames("h-100 contact-us", showNotification && "pt-0")}
+        ref={sectionRef}
       >
         <div className="row h-100">
           <div className="col-sm-5">
@@ -128,12 +134,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-sm-7" ref={contactRef}>
-            <div
-              className={classNames(
-                "contact",
-                showNotification && "notification-shown"
-              )}
-            >
+            <div className={"contact"}>
               <div className="content">
                 <NotificationBanner isOpen={showNotification} />
                 <h3>Have a project to talk about?</h3>
@@ -277,14 +278,14 @@ const Contact = () => {
                 </div>
                 <Button
                   className="mt-4 contact-submit"
-                  disabled={
-                    !name ||
-                    !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
-                      phoneOrEmail
-                    ) ||
-                    !project ||
-                    !projectDescription
-                  }
+                  // disabled={
+                  //   !name ||
+                  //   !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
+                  //     phoneOrEmail
+                  //   ) ||
+                  //   !project ||
+                  //   !projectDescription
+                  // }
                   onClick={handleSubmitClick}
                 >
                   {isLoading ? (

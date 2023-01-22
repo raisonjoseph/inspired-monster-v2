@@ -61,8 +61,8 @@ export default function Home() {
             <h2 className="title-1 secondary">
               Hey there, I am <b>Arun Sajeev</b>, a Product Designer based in
               Bengaluru. I specialize in creating experiences that are
-              intuitive, easy to use and visually pleasing. Let&apos;s create
-              something amazing together.
+              intuitive, easy to use and visually pleasing. Let&apos;s work
+              together to create something truly amazing.
             </h2>
 
             <a
