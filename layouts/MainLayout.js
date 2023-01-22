@@ -33,9 +33,22 @@ const MainLayout = ({ children }) => {
       <main className={classNames(isNeedMorePadding && "extra-space")}>
         {children}
       </main>
+      <section className="unsupported">
+        <h2>I knew this was coming!</h2>
+        <p className="description">
+          Sorry folks, it looks like we don&apos;t have a design for this
+          breakpoint... because my developer friend said people wouldn&apos;t
+          use it. I guess he&apos;s never heard of the phrase &apos;better safe
+          than sorry.&apos;
+        </p>
+      </section>
       <BottomNav />
     </React.Fragment>
   );
 };
 
 export default MainLayout;
+
+// Max width 769
+// Show error
+// Min 576

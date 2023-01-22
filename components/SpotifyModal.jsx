@@ -22,7 +22,7 @@ const SpotifyModal = ({ open, onClose }) => {
       <iframe
         src="https://open.spotify.com/embed/playlist/71LsMvu7RimgBrMInifH2Y"
         width="324"
-        height="277"
+        height="360"
         allow="encrypted-media"
       />
     </Modal>

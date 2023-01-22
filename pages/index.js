@@ -59,9 +59,10 @@ export default function Home() {
           </div>
           <div className="col-sm">
             <h2 className="title-1 secondary">
-              I am <b>Arun Sajeev</b>, a multidisciplinary designer based in
-              Kochi, India, withover 7 years of experience in delivering
-              world-class UI/UX, interaction and visual designs.
+              Hey there, I am <b>Arun Sajeev</b>, a Product Designer based in
+              Bengaluru. I specialize in creating experiences that are
+              intuitive, easy to use and visually pleasing. Let&apos;s create
+              something amazing together.
             </h2>
 
             <a

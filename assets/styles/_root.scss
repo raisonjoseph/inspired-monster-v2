@@ -12,6 +12,31 @@ main {
   font-family: $font-sans;
   position: relative;
 }
+section.unsupported {
+  height: calc(100% - 60px);
+  display: none;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 0px 60px;
+  justify-content: center;
+  h2 {
+    font-family: $font-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0px;
+    margin-bottom: 0.5rem;
+  }
+  p.description {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: $text-secondary;
+    font-family: $font-sans;
+  }
+}
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   main {
@@ -21,5 +46,26 @@ main {
   }
   #__next {
     height: auto;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 760px) {
+  main {
+    display: none;
+  }
+
+  section.unsupported {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 560px) {
+  main {
+    display: none;
+  }
+  section.unsupported {
+    display: flex;
+    flex-direction: column;
   }
 }

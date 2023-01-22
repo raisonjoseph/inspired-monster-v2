@@ -57,9 +57,9 @@ const Credits = ({ open, onClose }) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Spotify&nbsp;
+                  Spotify
                 </a>
-                for the music playlist widget
+                &nbsp;for the music playlist widget
               </p>
             </div>
             <div className="list-item">
@@ -70,9 +70,9 @@ const Credits = ({ open, onClose }) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Emojipedia&nbsp;
+                  Emojipedia
                 </a>
-                for beautiful, free emoji’s
+                &nbsp;for beautiful, free emoji’s
               </p>
             </div>
             <div className="list-item">
@@ -85,7 +85,7 @@ const Credits = ({ open, onClose }) => {
                 >
                   Dribbble
                 </a>
-                for the shots listing API
+                &nbsp;for the shots listing API
               </p>
             </div>
           </div>

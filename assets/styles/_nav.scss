@@ -234,6 +234,39 @@
     }
   }
 }
+@media (max-width: 992px) {
+  .navbar {
+    .container {
+      .nav-items {
+        .nav-item {
+          padding: 28px 1.5rem;
+          min-width: unset;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 760px) {
+  .navbar {
+    height: 58px;
+    .container {
+      padding: 0px 1.5rem;
+      .social-elements {
+        display: flex;
+      }
+      .nav-items {
+        display: none !important;
+      }
+    }
+    .logo {
+      padding: 12px 24px 12px 0px;
+      span {
+        max-width: 82px !important;
+      }
+    }
+  }
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {

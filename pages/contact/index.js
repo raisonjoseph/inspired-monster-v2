@@ -13,6 +13,7 @@ const Contact = () => {
   const [project, setProject] = useState();
   const [projectDescription, setProjectDescription] = useState("");
   const [showNotification, setShowNotification] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const contentRef = useRef(null);
   const contactRef = useRef(null);
   const footerRef = useRef(null);
@@ -54,8 +55,10 @@ const Contact = () => {
     setShowCredits(false);
   };
 
-  const handleSubmitClick = async () => {
+  const handleSubmitClick = async (event) => {
     try {
+      setIsLoading(!isLoading);
+      event.target.disabled = true;
       const response = await sendMail(
         name,
         phoneOrEmail,
@@ -68,6 +71,9 @@ const Contact = () => {
         setPhoneOrEmail("");
         setProject("");
         setProjectDescription("");
+        setIsLoading(false);
+        event.target.disabled = false;
+
         contactRef.current?.scrollTo(0, 0);
       }
     } catch (error) {
@@ -103,7 +109,7 @@ const Contact = () => {
                   >
                     instagram&nbsp;
                   </a>
-                  or you can also email me at&nbsp;
+                  or you can also email me at{" "}
                   <a
                     href="mailto:arun14949@gmail.com"
                     target="_blank"
@@ -271,17 +277,21 @@ const Contact = () => {
                 </div>
                 <Button
                   className="mt-4 contact-submit"
-                  // disabled={
-                  //   !name ||
-                  //   !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
-                  //     phoneOrEmail
-                  //   ) ||
-                  //   !project ||
-                  //   !projectDescription
-                  // }
+                  disabled={
+                    !name ||
+                    !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
+                      phoneOrEmail
+                    ) ||
+                    !project ||
+                    !projectDescription
+                  }
                   onClick={handleSubmitClick}
                 >
-                  Submit Project
+                  {isLoading ? (
+                    <span className="btn__loader" />
+                  ) : (
+                    "Submit Project"
+                  )}
                 </Button>
               </div>
             </div>
