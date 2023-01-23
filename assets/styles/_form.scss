@@ -39,19 +39,33 @@
       line-height: 16px;
       color: $text-primary;
     }
-    &:invalid:not(:placeholder-shown) {
+    &.error {
       border-color: $monster-red;
+      &:focus ~ .floating-label,
+      &:valid ~ .floating-label {
+        color: $monster-red;
+      }
     }
-    &:invalid:not(:placeholder-shown) ~ span {
-      display: block;
-    }
-    &:invalid:not(:placeholder-shown) ~ .floating-label {
-      transform: translate(8px, -16px);
-      padding: 8px;
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 16px;
-      color: $monster-red;
+    &.need-validation {
+      &:focus,
+      &:valid {
+        border-color: #212121;
+      }
+
+      &:invalid:not(:placeholder-shown) {
+        border-color: $monster-red;
+      }
+      &:invalid:not(:placeholder-shown) ~ span {
+        display: block;
+      }
+      &:invalid:not(:placeholder-shown) ~ .floating-label {
+        transform: translate(8px, -16px);
+        padding: 8px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 16px;
+        color: $monster-red;
+      }
     }
   }
   span.hint {
@@ -65,6 +79,10 @@
     color: $text-secondary;
     &.error {
       color: $monster-red;
+    }
+    &.error.custom {
+      color: $monster-red;
+      display: block;
     }
   }
 }

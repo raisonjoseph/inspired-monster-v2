@@ -268,6 +268,27 @@
   }
 }
 
+@media (max-height: 540px) and (min-width: 560px) {
+  .navbar {
+    height: 58px;
+    .container {
+      padding: 0px 1.5rem;
+      .social-elements {
+        display: flex;
+      }
+      .nav-items {
+        display: none !important;
+      }
+    }
+    .logo {
+      padding: 12px 24px 12px 0px;
+      span {
+        max-width: 82px !important;
+      }
+    }
+  }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .navbar {

@@ -6,6 +6,10 @@ import Button from "../../components/Button";
 import Credits from "../../components/Credits";
 import NotificationBanner from "../../components/NotificationBanner";
 
+const EMAIL_PHONE_REGEX = new RegExp(
+  /[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+[\.]{1}[a-z]{2,}$/
+);
+
 const Contact = () => {
   const [showCredits, setShowCredits] = useState(false);
   const [name, setName] = useState("");
@@ -14,6 +18,9 @@ const Contact = () => {
   const [projectDescription, setProjectDescription] = useState("");
   const [showNotification, setShowNotification] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [phoneOrEmailError, setPhoneOrEmailError] = useState();
+
+  // Ref
   const contentRef = useRef(null);
   const contactRef = useRef(null);
   const sectionRef = useRef(null);
@@ -38,6 +45,7 @@ const Contact = () => {
   };
 
   const handleOnPhoneOrEmailChange = (e) => {
+    if (phoneOrEmailError) setPhoneOrEmailError(undefined);
     setPhoneOrEmail(e.target.value);
   };
 
@@ -83,6 +91,18 @@ const Contact = () => {
       await setShowNotification(true);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const handleOnBlur = () => {
+    if (!phoneOrEmail) {
+      setPhoneOrEmailError(undefined);
+      return;
+    }
+    if (!EMAIL_PHONE_REGEX.test(phoneOrEmail)) {
+      setPhoneOrEmailError("Error");
+    } else {
+      setPhoneOrEmailError(undefined);
     }
   };
 
@@ -156,17 +176,23 @@ const Contact = () => {
                   <div className="col-sm">
                     <div className="form-group">
                       <input
+                        className={phoneOrEmailError ? "error" : ""}
                         type="text"
                         autoComplete="off"
                         id="floating_name"
                         placeholder=" "
                         onChange={handleOnPhoneOrEmailChange}
+                        onBlur={handleOnBlur}
                         value={phoneOrEmail}
                         required
-                        pattern="[789][0-9]\d{8,11}||[a-z0-9._%+-]+@[a-z0-9.-]+[\.]{1}[a-z]{2,}$"
                       />
                       <label className="floating-label">Email or Phone *</label>
-                      <span className="hint error">
+                      <span
+                        className={classNames(
+                          "hint error",
+                          phoneOrEmailError && "custom"
+                        )}
+                      >
                         * Please enter a valid email or phone
                       </span>
                     </div>
@@ -278,14 +304,14 @@ const Contact = () => {
                 </div>
                 <Button
                   className="mt-4 contact-submit"
-                  // disabled={
-                  //   !name ||
-                  //   !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
-                  //     phoneOrEmail
-                  //   ) ||
-                  //   !project ||
-                  //   !projectDescription
-                  // }
+                  disabled={
+                    !name ||
+                    !/[789][0-9]\d{8,11}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(
+                      phoneOrEmail
+                    ) ||
+                    !project ||
+                    !projectDescription
+                  }
                   onClick={handleSubmitClick}
                 >
                   {isLoading ? (
