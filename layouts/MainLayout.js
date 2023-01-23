@@ -29,6 +29,31 @@ const MainLayout = ({ children }) => {
 
   return (
     <React.Fragment>
+      <Head>
+        <meta name="og:title" content="Inspired Monster" />
+        <meta
+          name="og:description"
+          content="Hey there, I am Arun Sajeev, a Product Designer based in
+              Bengaluru. I specialize in creating experiences that are
+              intuitive, easy to use and visually pleasing. Let's work
+              together to create something truly amazing."
+        />
+        <meta name="twitter:title" content="Inspired Monster" />
+        <meta
+          name="twitter:description"
+          content="Hey there, I am Arun Sajeev, a Product Designer based in
+              Bengaluru. I specialize in creating experiences that are
+              intuitive, easy to use and visually pleasing. Let's work
+              together to create something truly amazing."
+        />
+        <meta
+          name="description"
+          content="Hey there, I am Arun Sajeev, a Product Designer based in
+              Bengaluru. I specialize in creating experiences that are
+              intuitive, easy to use and visually pleasing. Let's work
+              together to create something truly amazing."
+        />
+      </Head>
       <Header />
       <main className={classNames(isNeedMorePadding && "extra-space")}>
         {children}

@@ -58,12 +58,12 @@ export default function Home() {
             </div>
           </div>
           <div className="col-sm">
-            <h2 className="title-1 secondary">
+            <h1 className="title-1 secondary">
               Hey there, I am <b>Arun Sajeev</b>, a Product Designer based in
               Bengaluru. I specialize in creating experiences that are
               intuitive, easy to use and visually pleasing. Let&apos;s work
               together to create something truly amazing.
-            </h2>
+            </h1>
 
             <a
               href=" https://wa.me/919946701501"
