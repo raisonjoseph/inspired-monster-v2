@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useLayoutEffect, useRef, useState } from "react";
-import Button from "../../components/Button";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Credits from "../../components/Credits";
 import InstaThumbnail1 from "../../assets/images/insta_1.jpg";
 import InstaThumbnail2 from "../../assets/images/insta_2.jpg";
@@ -14,6 +13,7 @@ const AboutMe = () => {
   const [showCredits, setShowCredits] = useState(false);
   const contentRef = useRef(null);
   const footerRef = useRef(null);
+  const reelRef = useRef(null);
 
   useLayoutEffect(() => {
     function updateSize() {
@@ -27,6 +27,22 @@ const AboutMe = () => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
+
+  useEffect(() => {
+    if (!reelRef.current) return;
+    const element = reelRef.current;
+    function horizontalScroll(event) {
+      event.preventDefault();
+      element.scrollBy({
+        left: event.deltaY < 0 ? -10 : 10,
+        behaviour: "smooth",
+      });
+    }
+    reelRef.current.addEventListener("wheel", horizontalScroll);
+    return () => {
+      element.removeEventListener("wheel", horizontalScroll);
+    };
+  }, [reelRef]);
 
   const handleOnShowCreditsClick = () => {
     setShowCredits(true);
@@ -49,7 +65,7 @@ const AboutMe = () => {
             <div className="insta-reel">
               <div className="content" ref={contentRef}>
                 <h2>I observe things, Occasionally I connect them ✨</h2>
-                <div className="reels">
+                <div className="reels" ref={reelRef}>
                   <div className="reel-item">
                     <a
                       href="https://www.instagram.com/reel/CcK0FlaF3UZ/"

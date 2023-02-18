@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { getShots } from "../../api/works";
+import { getShot, getShots } from "../../api/works";
 import SliderControl from "../../components/SliderControl";
 import Image from "next/image";
 import DribbleIcon from "../../assets/images/dribble_cta.svg";
@@ -26,7 +26,6 @@ const WorkLanding = () => {
         const response = await getShots();
         if (response) {
           setDribbleWorks(response.data);
-          console.log("Got some response");
         }
       } catch (error) {
         console.log(error);

@@ -40,7 +40,7 @@ const Works = () => {
             dribbleWorks?.map((work, index) => (
               <div
                 className="item"
-                key={work.id}
+                key={work.id + index}
                 onClick={() => handleOnWorkClick(work.id)}
                 style={
                   (index + 1) % 10 === 0
@@ -63,7 +63,7 @@ const Works = () => {
             new Array(15).fill("")?.map((work, index) => (
               <div
                 className="item"
-                key={work.id}
+                key={"shimmer" + index}
                 onClick={() => handleOnWorkClick(work.id)}
                 style={
                   (index + 1) % 10 === 0

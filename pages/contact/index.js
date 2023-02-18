@@ -170,7 +170,7 @@ const Contact = () => {
                         value={name}
                         required
                       />
-                      <label className="floating-label">Your Name</label>
+                      <label className="floating-label">Your Name *</label>
                     </div>
                   </div>
                   <div className="col-sm">

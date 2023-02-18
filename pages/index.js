@@ -8,7 +8,7 @@ import InstagramIcon from "../assets/images/instagram_lg.svg";
 import LinkedinIcon from "../assets/images/linkedin_lg.svg";
 import DribbleIcon from "../assets/images/dribble_lg.svg";
 import SocialItem from "../components/SocialItem";
-import constants from "../utils/constants";
+import { whatsappMessages } from "../utils/constants";
 import SpotifyModal from "../components/SpotifyModal";
 
 export default function Home() {
@@ -58,7 +58,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col-sm">
-            <h1 className="title-1 secondary">
+            <h1 className="title-1 secondary slide-up">
               Hey there, I am <b>Arun Sajeev</b>, a Product Designer based in
               Bengaluru. I specialize in creating experiences that are
               intuitive, easy to use and visually pleasing. Let&apos;s work
@@ -66,9 +66,14 @@ export default function Home() {
             </h1>
 
             <a
-              href=" https://wa.me/919946701501"
+              href={`https://wa.me/919946701501?text=${encodeURI(
+                whatsappMessages[
+                  Math.floor(Math.random() * whatsappMessages.length)
+                ]
+              )}`}
               target="_blank"
               rel="noreferrer"
+              className="delay"
             >
               <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
                 Chat Now

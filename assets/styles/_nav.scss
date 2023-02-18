@@ -205,10 +205,15 @@
     cursor: pointer;
     border-right: 1px solid $border;
     color: $grey;
-    transition: all 0.3s ease;
+    svg rect {
+      transition: all 0.3s ease;
+    }
     &:hover {
       background: $light-red;
       color: $monster-red;
+      svg rect {
+        fill: $monster-red;
+      }
     }
     &:last-child {
       border: none;
@@ -293,28 +298,38 @@
 @media (max-width: 576px) {
   .navbar {
     height: 58px;
-  }
-  .navbar .container {
-    padding: 0px 1.5rem;
-  }
-
-  .navbar .logo {
-    padding: 0.75rem 1.5rem 0.75rem 0px;
-    border-right: 1px solid $nav-border;
-  }
-  .navbar .logo span {
-    max-width: 82px !important;
-  }
-
-  .navbar .container .nav-items {
-    display: none;
-  }
-
-  .navbar .container .social-elements {
-    display: flex;
+    .container {
+      padding: 0px 1.5rem;
+      .nav-items {
+        display: none;
+      }
+      .social-elements {
+        display: flex;
+      }
+    }
+    .logo {
+      padding: 0.75rem 1.5rem 0.75rem 0px;
+      border-right: 1px solid $nav-border;
+      span {
+        max-width: 82px !important;
+      }
+    }
   }
 
   .bottom-nav {
     display: flex;
+  }
+  .slider-nav,
+  .mobile-slider-nav {
+    .slider-button {
+      &:hover {
+        background: white;
+        color: $grey;
+      }
+      &:active {
+        background: $light-red;
+        color: $monster-red;
+      }
+    }
   }
 }

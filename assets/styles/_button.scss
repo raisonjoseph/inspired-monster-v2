@@ -23,7 +23,7 @@
   &.whatsapp-btn,
   &.contact-submit,
   &.resume {
-    min-width: 370px;
+    min-width: min(100%, 370px);
   }
 
   &.contact-submit:disabled {

@@ -27,7 +27,7 @@ section.unsupported {
     margin: 0px;
     margin-bottom: 0.5rem;
   }
-  p.description {
+  p.warning-text {
     margin: 0;
     font-weight: 400;
     font-size: 1rem;
@@ -46,6 +46,16 @@ section.unsupported {
   }
   #__next {
     height: auto;
+  }
+}
+
+@media (min-width: 760px) {
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
