@@ -13,6 +13,15 @@ import SpotifyModal from "../components/SpotifyModal";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState("");
+
+  useEffect(() => {
+    setWhatsappLink(
+      `https://wa.me/919946701501?text=${encodeURI(
+        whatsappMessages[Math.floor(Math.random() * whatsappMessages.length)]
+      )}`
+    );
+  }, []);
 
   const handleHeadPhoneClick = (e) => {
     const rect = e.target.getBoundingClientRect();
@@ -66,11 +75,7 @@ export default function Home() {
             </h1>
 
             <a
-              href={`https://wa.me/919946701501?text=${encodeURI(
-                whatsappMessages[
-                  Math.floor(Math.random() * whatsappMessages.length)
-                ]
-              )}`}
+              href={whatsappLink}
               target="_blank"
               rel="noreferrer"
               className="delay"

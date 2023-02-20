@@ -17,7 +17,8 @@
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-modal": "^3.15.1"
+    "react-modal": "^3.15.1",
+    "swiper": "^9.0.5"
   },
   "devDependencies": {
     "eslint": "^8.17.0",

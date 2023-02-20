@@ -8,6 +8,8 @@ import InstaThumbnail3 from "../../assets/images/insta_3.jpg";
 import InstaThumbnail4 from "../../assets/images/insta_4.jpg";
 import InstaThumbnail5 from "../../assets/images/insta_5.jpg";
 import InstaThumbnail6 from "../../assets/images/insta_6.jpg";
+import InstaWhiteIcon from "../../assets/images/insta_white_1.png";
+import Slider from "../../components/Slder";
 
 const AboutMe = () => {
   const [showCredits, setShowCredits] = useState(false);
@@ -30,17 +32,20 @@ const AboutMe = () => {
 
   useEffect(() => {
     if (!reelRef.current) return;
-    const element = reelRef.current;
     function horizontalScroll(event) {
-      event.preventDefault();
-      element.scrollBy({
-        left: event.deltaY < 0 ? -10 : 10,
+      const delta = Math.max(
+        -1,
+        Math.min(1, event.wheelDelta || -event.detail)
+      );
+      reelRef.current.scrollBy({
+        left: delta < 0 ? -10 : 10,
         behaviour: "smooth",
       });
+      event.preventDefault();
     }
-    reelRef.current.addEventListener("wheel", horizontalScroll);
+    // reelRef.current.addEventListener("wheel", horizontalScroll);
     return () => {
-      element.removeEventListener("wheel", horizontalScroll);
+      // reelRef.current.removeEventListener("wheel", horizontalScroll);
     };
   }, [reelRef]);
 
@@ -65,86 +70,149 @@ const AboutMe = () => {
             <div className="insta-reel">
               <div className="content" ref={contentRef}>
                 <h2>I observe things, Occasionally I connect them ✨</h2>
-                <div className="reels" ref={reelRef}>
+                <Slider className="reels">
                   <div className="reel-item">
-                    <a
-                      href="https://www.instagram.com/reel/CcK0FlaF3UZ/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        src={InstaThumbnail1}
-                        layout="responsive"
-                        alt="insta"
-                      />
-                    </a>
+                    <Image
+                      src={InstaThumbnail1}
+                      layout="responsive"
+                      alt="insta"
+                      unselectable="on"
+                    />
+                    <div className="filter">
+                      <a
+                        href="https://www.instagram.com/reel/CcK0FlaF3UZ/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src={InstaWhiteIcon}
+                          layout="fixed"
+                          width={48}
+                          height={48}
+                          alt="insta"
+                          unselectable="on"
+                        />
+                      </a>
+                    </div>
                   </div>
                   <div className="reel-item">
-                    <a
-                      href="https://www.instagram.com/reel/CiPCoURuWev/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        src={InstaThumbnail2}
-                        layout="responsive"
-                        alt="insta"
-                      />
-                    </a>
+                    <Image
+                      src={InstaThumbnail2}
+                      layout="responsive"
+                      alt="insta"
+                      unselectable="on"
+                    />
+                    <div className="filter">
+                      <a
+                        href="https://www.instagram.com/reel/CiPCoURuWev/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src={InstaWhiteIcon}
+                          layout="fixed"
+                          width={48}
+                          height={48}
+                          alt="insta"
+                          unselectable="on"
+                        />
+                      </a>
+                    </div>
                   </div>
                   <div className="reel-item">
-                    <a
-                      href="https://www.instagram.com/reel/ChLtbHHFMxu/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        src={InstaThumbnail3}
-                        layout="responsive"
-                        alt="insta"
-                      />
-                    </a>
+                    <Image
+                      src={InstaThumbnail3}
+                      layout="responsive"
+                      alt="insta"
+                      unselectable="on"
+                    />
+                    <div className="filter">
+                      <a
+                        href="https://www.instagram.com/reel/ChLtbHHFMxu/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src={InstaWhiteIcon}
+                          layout="fixed"
+                          width={48}
+                          height={48}
+                          alt="insta"
+                          unselectable="on"
+                        />
+                      </a>
+                    </div>
                   </div>
                   <div className="reel-item">
-                    <a
-                      href="https://www.instagram.com/reel/CgMivC1FHOe/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        src={InstaThumbnail4}
-                        layout="responsive"
-                        alt="insta"
-                      />
-                    </a>
+                    <Image
+                      src={InstaThumbnail4}
+                      layout="responsive"
+                      alt="insta"
+                    />
+                    <div className="filter">
+                      <a
+                        href="https://www.instagram.com/reel/CgMivC1FHOe/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src={InstaWhiteIcon}
+                          layout="fixed"
+                          width={48}
+                          height={48}
+                          alt="insta"
+                          unselectable="on"
+                        />
+                      </a>
+                    </div>
                   </div>
                   <div className="reel-item">
-                    <a
-                      href="https://www.instagram.com/reel/Ce3ea2_loWc/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        src={InstaThumbnail5}
-                        layout="responsive"
-                        alt="insta"
-                      />
-                    </a>
+                    <Image
+                      src={InstaThumbnail5}
+                      layout="responsive"
+                      alt="insta"
+                    />
+                    <div className="filter">
+                      <a
+                        href="https://www.instagram.com/reel/Ce3ea2_loWc/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src={InstaWhiteIcon}
+                          layout="fixed"
+                          width={48}
+                          height={48}
+                          alt="insta"
+                          unselectable="on"
+                        />
+                      </a>
+                    </div>
                   </div>
                   <div className="reel-item">
-                    <a
-                      href="https://www.instagram.com/reel/CfQ6V3hoRz0/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        src={InstaThumbnail6}
-                        layout="responsive"
-                        alt="insta"
-                      />
-                    </a>
+                    <Image
+                      src={InstaThumbnail6}
+                      layout="responsive"
+                      alt="insta"
+                    />
+                    <div className="filter">
+                      <a
+                        href="https://www.instagram.com/reel/CfQ6V3hoRz0/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src={InstaWhiteIcon}
+                          layout="fixed"
+                          width={48}
+                          height={48}
+                          alt="insta"
+                          unselectable="on"
+                        />
+                      </a>
+                    </div>
                   </div>
-                </div>
+                </Slider>
               </div>
               <div className="footer" ref={footerRef}>
                 <p>
