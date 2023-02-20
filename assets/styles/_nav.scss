@@ -211,7 +211,8 @@
     &:hover {
       background: $light-red;
       color: $monster-red;
-      svg rect {
+      svg rect,
+      svg path {
         fill: $monster-red;
       }
     }
@@ -222,6 +223,13 @@
       color: $dark-grey;
       background: $light-grey;
       cursor: not-allowed;
+      svg rect,
+      svg path {
+        fill: $dark-grey;
+      }
+    }
+    &.right svg {
+      transform: rotate(180deg);
     }
     span {
       font-size: 2.5rem;
@@ -325,10 +333,18 @@
       &:hover {
         background: white;
         color: $grey;
+        svg rect,
+        svg path {
+          fill: $grey;
+        }
       }
       &:active {
         background: $light-red;
         color: $monster-red;
+        svg rect,
+        svg path {
+          fill: $monster-red;
+        }
       }
     }
   }

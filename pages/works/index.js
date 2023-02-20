@@ -2,7 +2,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Scrollbar from "smooth-scrollbar";
 import { getShots } from "../../api/works";
 import Shimmer from "../../components/Shimmer";
 
@@ -10,6 +11,7 @@ const Works = () => {
   const router = useRouter();
   const [dribbleWorks, setDribbleWorks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const workRef = useRef();
 
   useEffect(() => {
     const fetchWorks = async () => {
@@ -26,6 +28,20 @@ const Works = () => {
     fetchWorks();
   }, []);
 
+  useEffect(() => {
+    if (!workRef.current) return;
+    const Scroll = Scrollbar.init(workRef.current, {
+      enable: true,
+      effect: "bounce",
+      damping: 0.05,
+      maxOverscroll: 150,
+      alwaysShowTracks: true,
+      glowColor: "#fff",
+    });
+    Scroll.track.xAxis.element.remove();
+    Scroll.track.yAxis.element.remove();
+  }, [workRef]);
+
   const handleOnWorkClick = (id) => router.push(`/works/${id}/`);
 
   return (
@@ -34,7 +50,7 @@ const Works = () => {
         <title>Inspired Monster | About me</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="works">
+      <section className="works" ref={workRef}>
         <div className="container">
           {!isLoading &&
             dribbleWorks?.map((work, index) => (

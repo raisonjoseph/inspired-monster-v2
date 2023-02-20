@@ -22,7 +22,18 @@ const Credits = ({ open, onClose }) => {
     >
       <div className="credits">
         <button className="close-button" onClick={onClose}>
-          <span className="material-symbols-rounded">close</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <path
+              d="M24.4 7.61354C23.88 7.09354 23.04 7.09354 22.52 7.61354L16 14.1202L9.47996 7.60021C8.95996 7.08021 8.11996 7.08021 7.59996 7.60021C7.07996 8.12021 7.07996 8.96021 7.59996 9.48021L14.12 16.0002L7.59996 22.5202C7.07996 23.0402 7.07996 23.8802 7.59996 24.4002C8.11996 24.9202 8.95996 24.9202 9.47996 24.4002L16 17.8802L22.52 24.4002C23.04 24.9202 23.88 24.9202 24.4 24.4002C24.92 23.8802 24.92 23.0402 24.4 22.5202L17.88 16.0002L24.4 9.48021C24.9066 8.97354 24.9066 8.12021 24.4 7.61354Z"
+              fill="#A2A0A1"
+            />
+          </svg>
         </button>
         <div className="content">
           <h5>Credits</h5>

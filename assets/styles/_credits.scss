@@ -28,6 +28,10 @@
     &:hover {
       background: $light-red;
       color: $monster-red;
+      svg rect,
+      svg path {
+        fill: $monster-red;
+      }
     }
   }
   .content {
@@ -111,6 +115,19 @@
     .close-button {
       top: 24px;
       right: 24px;
+      &:hover {
+        svg rect,
+        svg path {
+          fill: $grey;
+        }
+      }
+      &:active {
+        background: $light-red;
+        svg rect,
+        svg path {
+          fill: $monster-red;
+        }
+      }
     }
     .content {
       padding: 2rem 1.5rem;
