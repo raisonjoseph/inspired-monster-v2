@@ -6,6 +6,13 @@ body {
 #__next {
   height: 100vh;
 }
+
+button,
+input,
+textarea,
+span {
+  -webkit-tap-highlight-color: transparent;
+}
 main {
   max-height: calc(100vh - 84px);
   height: 100%;
