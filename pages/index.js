@@ -78,9 +78,9 @@ export default function Home() {
               href={whatsappLink}
               target="_blank"
               rel="noreferrer"
-              className="delay"
+              className="delay mt-40 anchor"
             >
-              <Button icon={WhatsappIcon} className="mt-40 whatsapp-btn">
+              <Button icon={WhatsappIcon} className="whatsapp-btn">
                 Chat Now
               </Button>
             </a>

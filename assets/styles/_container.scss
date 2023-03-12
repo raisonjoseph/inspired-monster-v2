@@ -12,6 +12,11 @@
     justify-content: center;
     height: 100%;
   }
+  &.home {
+    .anchor {
+      width: min(100%, 370px);
+    }
+  }
 }
 
 .home-image-container {
