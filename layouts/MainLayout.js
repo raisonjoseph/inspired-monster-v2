@@ -34,20 +34,20 @@ const MainLayout = ({ children }) => {
         <meta
           name="og:description"
           content="Hey there, I am Arun Sajeev, a Product Designer based in
-              Bengaluru. I specialize in creating experiences that are
+              Kochi. I specialize in creating experiences that are
               intuitive, easy to use and visually pleasing."
         />
         <meta name="twitter:title" content="Inspired Monster" />
         <meta
           name="twitter:description"
           content="Hey there, I am Arun Sajeev, a Product Designer based in
-              Bengaluru. I specialize in creating experiences that are
+              Kochi. I specialize in creating experiences that are
               intuitive, easy to use and visually pleasing."
         />
         <meta
           name="description"
           content="Hey there, I am Arun Sajeev, a Product Designer based in
-              Bengaluru. I specialize in creating experiences that are
+              Kochi. I specialize in creating experiences that are
               intuitive, easy to use and visually pleasing."
         />
       </Head>

@@ -21,9 +21,8 @@ const AboutMe = () => {
     function updateSize() {
       if (!contentRef.current || !footerRef.current) return;
       const contentXPos = contentRef.current.getBoundingClientRect().x;
-      footerRef.current.style.width = `${
-        contentXPos + contentRef.current.clientWidth
-      }px`;
+      footerRef.current.style.width = `${contentXPos + contentRef.current.clientWidth
+        }px`;
     }
     window.addEventListener("resize", updateSize);
     updateSize();
@@ -244,7 +243,7 @@ const AboutMe = () => {
                 </p>
                 <a
                   className="btn resume"
-                  href="https://drive.google.com/file/d/1qLl699B5wEhUSmqsb1f6kYSedvuP6Nss/view"
+                  href="https://drive.google.com/file/d/1bmJecJH8KoXGrAsAy10jS-Cau_joGHfA/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >
