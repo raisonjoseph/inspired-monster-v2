@@ -243,7 +243,7 @@ const AboutMe = () => {
                 </p>
                 <a
                   className="btn resume"
-                  href="https://drive.google.com/file/d/1zaPc6E1hDu8xgL7mY0dVHPnFhDQRZu9S/view?usp=sharing""
+                  href="https://drive.google.com/file/d/1zaPc6E1hDu8xgL7mY0dVHPnFhDQRZu9S/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >
